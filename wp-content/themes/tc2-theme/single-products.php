@@ -22,12 +22,13 @@
     <?php get_template_part('parts/right-aside'); ?>
 
     <div class="wrapper app-visual-design-page">
+    <div class="mask js-close-nav"></div>
        
         <?php get_template_part('parts/top-head'); ?>
 
         <div class="banner-visual-design-bg"></div>
         
-        <div class="top-banner-app-visual-design top-banner">
+        <div class="top-banner has-header -app-visual-design top-banner">
             <div class="box-area">
                 <div class="boxs">
                     <span class="relative">

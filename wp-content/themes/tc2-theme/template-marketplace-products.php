@@ -3,16 +3,10 @@
 
     // get all custom fields
 	$fields = get_fields();
-
+        
     // Dynamic CSS
-	wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
 	$custom_css = "";
 	
-        // background for top banner
-        if ( $fields['top_banner'][0]['background_image']!='' ) {
-            $custom_css .= ".top-banner-the-products { background-image: url(".$fields['top_banner'][0]['background_image'].") !important; }";
-        }
-
         if ( $fields['contact_form'][0]['background_image']!='' ) {
             $custom_css .= ".contact-module.contact-black-module .section-contact { background-image: url(".$fields['contact_form'][0]['background_image'].") !important; }";
         }
@@ -25,29 +19,22 @@
         }
 
     // Render custom css
-	wp_add_inline_style( 'section-custom-style', $custom_css );
+    if ($custom_css!='') {
+        wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
+        wp_add_inline_style( 'section-custom-style', $custom_css );
+    }
 
     get_header();
 ?>
     <?php get_template_part('parts/right-aside'); ?>
 
     <div class="wrapper marketplace-page marketplace-the-products-page">
+    <div class="mask js-close-nav"></div>
 
         <?php get_template_part('parts/top-head'); ?>
-
-        <div class="top-banner-the-products top-banner-marketplace top-banner">
-            <div class="container">
-                <div class="valign-middle">
-                    <h2 class="titles"><?php echo $fields['top_banner'][0]['title']; ?></h2>
-                    <p class="txt">
-                        <?php echo $fields['top_banner'][0]['subtitle']; ?>
-                    </p>
-                    <a href="<?php echo $fields['top_banner'][0]['button'][0]['url']; ?>" target="<?php echo $fields['top_banner'][0]['button'][0]['target_window']; ?>" class="btn-blue btn-explore-our-offerings"><?php echo $fields['top_banner'][0]['button'][0]['label']; ?></a>
-                </div>
-            </div>
-        </div>
-        <!-- end .top-banner -->
-
+        
+        <?php include(locate_template('parts/hero-carousel.php')); ?>
+        
         <?php get_template_part('parts/nav-marketplace'); ?>
 
         <div class="contents">

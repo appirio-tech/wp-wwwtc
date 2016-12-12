@@ -1,57 +1,50 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-
-get_header('blog'); ?>
-
-	<div id="primary" class="content-area padding_top">
-		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'blog/template-parts/content', get_post_format() );
-
-			// End the loop.
-			endwhile;
-
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( '&laquo;', 'twentysixteen' ),
-				'next_text'          => __( '&raquo;', 'twentysixteen' ),
-				'before_page_number' => '',
-			) );
-
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'blog/template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- .site-main -->
+<?php get_header(); ?>
+    
+    <?php get_template_part('parts/right-aside'); ?>
+    
+    <div class="wrapper generic">
+        <div class="mask js-close-nav"></div>
+        
+        <?php get_template_part('parts/top-head'); ?>
+        
+        <div class="top-banner top-banner-blog" ></div>
+        
+        <div class="contents">
+            <a name="fold"></a>
+            
+            <?php
+                if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <div class="blog-list-item">
+                    <div class="blog-list-item-content">
+                        <h2 class="text-center"><?php the_title(); ?></h2>
+                        <div class="blog-list-item-excerpt">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <a href="/blog/<?php echo $post->post_name; ?>/" class="btn-blue">Read the full story</a>
+                    </div>
+                    <?php 
+                        if ( has_post_thumbnail() ) {
+                            the_post_thumbnail();
+                        } else {
+                            echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/blog/images/default-thumb.jpg" />';
+                        }
+                    ?>
+                </div>
+            <?php endwhile; 
+                
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( '&laquo;', 'topcoder' ),
+                    'next_text'          => __( '&raquo;', 'topcoder' ),
+                    'before_page_number' => '',
+                ) );
+                
+                endif; 
+            ?>
+        </div>
+        
+        <?php get_template_part('parts/footer'); ?>
 	</div><!-- .content-area -->
-	
-<?php get_footer('blog'); ?>
+
+<?php get_template_part('parts/subscribe-modal'); ?>
+<?php get_footer(); ?>

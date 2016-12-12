@@ -38,4 +38,9 @@ jQuery(document).ready(function($){
 			submitIcon.click();
 		}
 	});
+    
+    $('.btn-icon-close').click(function(){
+        $('#mySidenav').width(0);
+        $('#page').css('margin-right', 0);
+    });
 });

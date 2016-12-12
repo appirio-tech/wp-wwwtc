@@ -1016,7 +1016,7 @@ body.is-modal-open {
 		transition-duration: .3s;
 		transition-delay: .3s;
 		transition-timing-function: cubic-bezier(0.46, 0.03, 0.52, 0.96);
-		top: -100%;
+		top: -200%;
 		}
 		
 	.animate-slide-from-bottom.in {

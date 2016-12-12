@@ -1,4 +1,5 @@
-<nav class="nav-tab nav-tab-about">
+<nav class="nav-tab js-nav-tab nav-tab-about js-affix" target=".wrapper">
+<a class="nav-current visible-xs"> <?php echo get_the_title() ?></a>
    <?php
         $nav = array(
             'container' 	=> false,

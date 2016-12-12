@@ -1,0 +1,49 @@
+// sass variables
+$gutter1x: 9px;
+$gutter2x: 20px;
+$gutter3x: 30px;
+
+
+//amimation speed
+$ani-ease: 0.2s;
+$spd-normal: 0.3s;
+$spd-medium: 0.5s;
+
+//spacings
+$sp-1x: 10px;
+$sp-2x: 20px;
+$sp-3x: 30px;
+$sp-4x: 40px;
+$sp-6x: 60px;
+$sp-8x: 80px;
+
+//font-size
+$fz-xxx-small: 9px;
+$fz-xx-small: 11px;
+$fz-x-small: 12px;
+$fz-small: 13px;
+$fz-small-p: 15px;
+$fz-medium: 16px;
+$fz-medium-p: 17px;
+$fz-large: 20px;
+$fz-larger: 25px;
+$fz-x-large: 30px;
+
+//btn-width
+$bw-small: 150px;
+$bw-medium: 200px;
+
+//fonts mixins
+@mixin f-proxima {
+  font-family: "proxima-nova", sans-serif;
+}
+@mixin f-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+//ellipsis
+@mixin ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

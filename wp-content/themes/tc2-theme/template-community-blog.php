@@ -47,6 +47,8 @@ get_header('blog'); ?>
 		</ul>
 <div class="tab-content">
 	<?php 
+        echo do_shortcode('[wp-tiles post_type="post" orderby="date" order="DESC" posts_per_page="auto" category="community" tag="" tax_operator="IN" offset="0" post_status="publish" ignore_sticky_posts="false" exclude_current_post="true"]');
+    /*
 	$count = 1;
 	if ( ! empty( $categories ) ) {
 	foreach( $categories as $category ) { ?>
@@ -64,7 +66,7 @@ get_header('blog'); ?>
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+					 * /
 					get_template_part( 'blog/template-parts/content', get_post_format() );
 
 				// End the loop.
@@ -78,7 +80,7 @@ get_header('blog'); ?>
 			?>
 		</div>
 		
-	<?php $count++; } } ?>
+	<?php $count++; } } */ ?>
 </div>
 		
 

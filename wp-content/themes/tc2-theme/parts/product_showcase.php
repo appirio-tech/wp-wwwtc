@@ -34,7 +34,7 @@ if ( $query->have_posts() ) :
     
 ?>
 <div class="carousel-info">
-    <div id="carousel-app" class="carousel slide" data-ride="carousel" data-interval="">
+    <div id="carousel-app" class="carousel slide js-slider" data-ride="carousel" data-interval="false">
         <div class="carousel-slide">
             <a href="#carousel-app" class="btn-icon-arrow-left" role="button" data-slide="prev">
                 <span class="icons <?php echo $slide_mode=='light' ? '' : 'white-arrow-left'; ?>" aria-hidden="true"></span>

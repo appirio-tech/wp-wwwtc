@@ -1,19 +1,21 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-left-image-right-text mobile-info-area info-area">
-    
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="item generic-left-image-right-text mobile-info-area info-area <?php if($generic_section_key===0){ echo 'active';} ?>">
+    <div class="inner-con  <?php echo (!$generic_section_val['side_image']? 'no-side-img' : '') ?>">
     <div class="match-iphone <?php echo $generic_section_val['side_image_position']=='Edge' ? 'left-truncate' : ''; ?>">
-        <img src="<?php echo $generic_section_val['side_image']; ?>" alt="" />
+        <?php if ($generic_section_val['side_image']!='') : ?>
+        <img src="<?php echo $generic_section_val['side_image']; ?>"  alt="" />
+        <?php endif; ?>
     </div>
     
     <div class="mains">
         
-        <?php if ($generic_section_val['top_icon']!='') : ?>
+        <?php if ($generic_section_val['top_icon']) : ?>
         <div class="icons mobile-text-icon">
             <img src="<?php echo $generic_section_val['top_icon']; ?>" alt="" />
         </div>
         <?php endif; ?>
         
         <?php if ( $generic_section_val['title']!='' ) : ?>
-        <h3 class="titles"><?php echo $generic_section_val['title']; ?></h3>
+        <h3 class="titles <?php if(!$generic_section_val['top_icon']){echo 'no-icon';} ?>"><?php echo $generic_section_val['title']; ?></h3>
         <?php endif; ?>
         
         <?php if ( $generic_section_val['short_description']!='' ) : ?>
@@ -51,7 +53,10 @@
         </a>
         <?php endif; ?>
         
-    </div><!-- / .mains -->
+    </div>
+    <!-- / .mains -->
+    </div>
+    <!-- /.inner-con -->
 </div>
 
 

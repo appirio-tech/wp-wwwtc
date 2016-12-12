@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="footer-main">
         <div class="left-box">
-            <a href="/" class="icons icon-footer-logo"></a>
+            <a href="index.html" class="icons icon-footer-logo"></a>
         </div>
         <div class="item-list clearfix">
             <div class="item">

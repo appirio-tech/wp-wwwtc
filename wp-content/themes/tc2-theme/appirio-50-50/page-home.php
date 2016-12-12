@@ -7,7 +7,7 @@
                 <p>With a community of over 1,000,000 design and technology experts, Topcoder provides on-demand capability, bandwidth, and velocity so you can do more.</p>
                 <div class="btn-group">
                     <!--<a href="javascript:;" class="btn btn-default js-modal" data-target="modal-deliver">I want to get work done</a>-->
-                    <a href="/home/" class="btn btn-default">I want to get work done</a>
+                    <a href="/what-can-you-do/" class="btn btn-default">I want to get work done</a>
                     <a href="javascript:;" class="btn btn-default js-modal" data-target="modal-compete">I want to join Topcoder</a>
                 </div>
                 <!--/ .btn-group -->
@@ -18,6 +18,7 @@
     <section class="widget widget-crodwsourcing-exceptional" data-role="widget">
         <div class="container">
             <div class="valign-middle">
+                <div class="valign-con">
                 <h2>Crowdsourcing with Topcoder is exceptional for:</h2>
                 <ul class="clearfix">
                     <li class="design">
@@ -48,6 +49,8 @@
                     </li>
                 </ul>
             </div>
+            </div>
+            <!-- /.valign-con -->
         </div>
     </section>
     <!--/ .widget -->

@@ -124,21 +124,21 @@ if ( $query->have_posts() ) :
                     <!-- end .bottom-btn-group -->
                     <div class="line-br"></div>
                     <div class="bottom-btn-group">
-                        
-                        <?php if ( $product_fields['product_video_button'][0]['video_id']!='' ) : ?>
-                        <a href="#" class="btn-gray-border" data-toggle="modal" data-target="#modal-video" data-video="<?php echo $product_fields['product_video_button'][0]['video_id']; ?>">
-                            <?php echo $product_fields['product_video_button'][0]['label']; ?>
-                            <i class="icon-right-arrow icons"></i>
-                        </a>
-                        <?php endif; ?>
-                        
-                        <?php if ( $product_fields['product_pdf_button'][0]['url']!='' ) : ?>
-                        <a href="<?php echo $product_fields['product_pdf_button'][0]['url']; ?>" target="<?php echo $product_fields['product_pdf_button'][0]['target_window']; ?>" class="btn-pdf-icon">
-                            <i class="icons"></i>
-                            <span><?php echo $product_fields['product_pdf_button'][0]['label']; ?></span>
-                        </a>
-                        <?php endif; ?>
-                        
+                        <div class="btn-sub-group">
+                            <?php if ( $product_fields['product_video_button'][0]['video_id']!='' ) : ?>
+                            <a href="#" class="btn-gray-border" data-toggle="modal" data-target="#modal-video" data-video="<?php echo $product_fields['product_video_button'][0]['video_id']; ?>">
+                                <?php echo $product_fields['product_video_button'][0]['label']; ?>
+                                <i class="icon-right-arrow icons"></i>
+                            </a>
+                            <?php endif; ?>
+                            
+                            <?php if ( $product_fields['product_pdf_button'][0]['url']!='' ) : ?>
+                            <a href="<?php echo $product_fields['product_pdf_button'][0]['url']; ?>" target="<?php echo $product_fields['product_pdf_button'][0]['target_window']; ?>" class="btn-pdf-icon">
+                                <i class="icons"></i>
+                                <span><?php echo $product_fields['product_pdf_button'][0]['label']; ?></span>
+                            </a>
+                            <?php endif; ?>
+                        </div>
                         <a href="http://crowdsourcing.topcoder.com/piqued_by_crowdsourcing" target="_blank" class="btn-blue"><?php echo $product_fields['product_get_started_button'][0]['label']; ?></a>
                     </div>
                     <!-- end .info-options -->

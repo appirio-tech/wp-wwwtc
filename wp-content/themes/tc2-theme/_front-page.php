@@ -39,6 +39,7 @@
     <?php get_template_part('parts/right-aside'); ?>
 
     <div class="wrapper landing-page">
+    <div class="mask js-close-nav"></div>
         <div class="main-container">
             <section class="section section-top-banner widget active">
                 
@@ -46,7 +47,7 @@
                 
                 <div class="container">
                     <div class="valign-middle">
-                        <div class="top-banner">
+                        <div class="top-banner has-header ">
                             <h2 class="titles"><?php echo $fields['sec1_title']; ?></h2>
                             <div class="row">
                                 <a href="<?php echo $fields['sec1_button_url']; ?>" class="btn-white btn-what-can-you-get-done"><?php echo $fields['sec1_button_label']; ?></a>

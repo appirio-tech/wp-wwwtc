@@ -1,24 +1,21 @@
 <?php
     /* Template Name: Algorithm & Analytics Page Template */
-
+    
     // get all custom fields
 	$fields = get_fields();
-
+        
     // Dynamic CSS
-	wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
 	$custom_css = "";
-	
-        // background for top banner
-        if ( $fields['background_image']!='' ) {
-            $custom_css .= ".top-banner { background-image: url(".$fields['background_image'].") !important; }";
-        }
-
+    
         if ( $fields['sec2_background_image']!='' ) {
             $custom_css .= ".products-module.blue-ribbon { background-image: url(".$fields['sec2_background_image'].") !important; }";
         }
 
     // Render custom css
-	wp_add_inline_style( 'section-custom-style', $custom_css );
+    if ($custom_css!='') {
+        wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
+        wp_add_inline_style( 'section-custom-style', $custom_css );
+    }
 
     get_header();
 ?>
@@ -26,22 +23,12 @@
     <?php get_template_part('parts/right-aside'); ?>
     
     <div class="wrapper what-can-you-do-page">
+    <div class="mask js-close-nav"></div>
         
         <?php get_template_part('parts/top-head'); ?>
-
-        <div class="top-banner-algorithms-analytics top-banner-what top-banner">
-            <div class="container">
-                <div class="valign-middle">
-                    <h2 class="titles"><?php echo $fields['title']; ?></h2>
-                    <p class="txt"><?php echo $fields['description']; ?></p>
-                    <div class="row">
-                        <a href="<?php echo $fields['banner_button_url']; ?>" target="<?php echo $fields['banner_button_target_window']; ?>" class="btn-white btn-explore-what-you-can-do"><?php echo $fields['banner_button_label']; ?></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end .top-banner -->
-
+        
+        <?php include(locate_template('parts/hero-carousel.php')); ?>
+        
         <?php get_template_part('parts/nav-what-can-you-do'); ?>
         
         

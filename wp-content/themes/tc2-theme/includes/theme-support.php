@@ -16,6 +16,7 @@ add_action( 'after_setup_theme', 'theme_prefix_setup' );
 // Custom theme customization
 function quesks_customize_register( $wp_customize ) {
     
+    /*
     // Header Link section -----------------------------------------------
     $wp_customize->add_section( 'quesks_header_link_section' , array(
         'title'      => 'Header Link',
@@ -72,82 +73,88 @@ function quesks_customize_register( $wp_customize ) {
                 'settings'   => 'quesks_social_media_options['.$v['key'].']',
             ));
         }
+    */
     
     
-    /*
-    // Member of the Month section -----------------------------------------------
-    $wp_customize->add_section( 'quesks_member_month_section' , array(
-        'title'      => 'Member of the Month',
-        'priority'   => 110,
+    // Exit Intent section ----------------------------
+    $label = 'Exit Intent';
+    $field = strtolower(str_replace(' ', '_', $label));
+    $wp_customize->add_section( 'quesks_'.$field.'_section' , array(
+        'title'      => $label,
+        'priority'   => 160,
     ) );
     
-        // Name
-        $wp_customize->add_setting('quesks_member_month_options[name]', array(
-            'default'        => '',
-            'capability'     => 'edit_theme_options',
-            'type'           => 'option',
-
-        ));
-        $wp_customize->add_control('quesks_member_month_options_name', array(
-            'label'      => 'Name',
-            'section'    => 'quesks_member_month_section',
-            'settings'   => 'quesks_member_month_options[name]',
-        ));
-    
-        // Picture
-        $wp_customize->add_setting('quesks_member_month_options[photo]', array(
-            'default'        => '',
-            'capability'     => 'edit_theme_options',
-            'type'           => 'option',
-
-        ));
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'photo', array(
-            'label'      => 'Photo',
-            'section'    => 'quesks_member_month_section',
-            'settings'   => 'quesks_member_month_options[photo]',
-        )));
-    
-        // Description
-        $wp_customize->add_setting('quesks_member_month_options[description]', array(
-            'default'        => '',
-            'capability'     => 'edit_theme_options',
-            'type'           => 'option',
-
-        ));
-        $wp_customize->add_control('quesks_member_month_options_description', array(
-            'label'      => 'Description',
-            'section'    => 'quesks_member_month_section',
-            'settings'   => 'quesks_member_month_options[description]',
-            'type'       => 'textarea',
-        ));
-    
-        // Button Label
-        $wp_customize->add_setting('quesks_member_month_options[button_label]', array(
-            'default'        => 'Meet the community',
-            'capability'     => 'edit_theme_options',
-            'type'           => 'option',
-
-        ));
-        $wp_customize->add_control('quesks_member_month_options_button_label', array(
-            'label'      => 'Button Label',
-            'section'    => 'quesks_member_month_section',
-            'settings'   => 'quesks_member_month_options[button_label]',
-        ));
-    
-        // Button URL
-        $wp_customize->add_setting('quesks_member_month_options[button_url]', array(
-            'default'        => '#',
-            'capability'     => 'edit_theme_options',
-            'type'           => 'option',
-
-        ));
-        $wp_customize->add_control('quesks_member_month_options_button_url', array(
-            'label'      => 'Button URL',
-            'section'    => 'quesks_member_month_section',
-            'settings'   => 'quesks_member_month_options[button_url]',
+        $key_label = "Enabled";
+        $key_field = strtolower(str_replace(' ', '_', $key_label));
+        $wp_customize->add_setting('quesks_'.$field.'_options['.$key_field.']', array(
+            'default'       => '',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option'
         ));
         
-    */
+        $wp_customize->add_control('quesks_'.$field.'_options_'.$key_field, array(
+            'label'         => $key_label,
+            'section'       => 'quesks_'.$field.'_section',
+            'settings'      => 'quesks_'.$field.'_options['.$key_field.']',
+            'type'          => 'checkbox'
+        ));
+        
+        $key_label = "Title";
+        $key_field = strtolower(str_replace(' ', '_', $key_label));
+        $wp_customize->add_setting('quesks_'.$field.'_options['.$key_field.']', array(
+            'default'       => '',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option'
+        ));
+        
+        $wp_customize->add_control('quesks_'.$field.'_options_'.$key_field, array(
+            'label'         => $key_label,
+            'section'       => 'quesks_'.$field.'_section',
+            'settings'      => 'quesks_'.$field.'_options['.$key_field.']',
+        ));
+        
+        $key_label = "Description";
+        $key_field = strtolower(str_replace(' ', '_', $key_label));
+        $wp_customize->add_setting('quesks_'.$field.'_options['.$key_field.']', array(
+            'default'       => '',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option'
+        ));
+        
+        $wp_customize->add_control('quesks_'.$field.'_options_'.$key_field, array(
+            'label'         => $key_label,
+            'section'       => 'quesks_'.$field.'_section',
+            'settings'      => 'quesks_'.$field.'_options['.$key_field.']',
+            'type'          => 'textarea'
+        ));
+        
+        $key_label = "Button Label";
+        $key_field = strtolower(str_replace(' ', '_', $key_label));
+        $wp_customize->add_setting('quesks_'.$field.'_options['.$key_field.']', array(
+            'default'       => '',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option'
+        ));
+        
+        $wp_customize->add_control('quesks_'.$field.'_options_'.$key_field, array(
+            'label'         => $key_label,
+            'section'       => 'quesks_'.$field.'_section',
+            'settings'      => 'quesks_'.$field.'_options['.$key_field.']',
+        ));
+        
+        $key_label = "Button URL";
+        $key_field = strtolower(str_replace(' ', '_', $key_label));
+        $wp_customize->add_setting('quesks_'.$field.'_options['.$key_field.']', array(
+            'default'       => '',
+            'capability'    => 'edit_theme_options',
+            'type'          => 'option'
+        ));
+        
+        $wp_customize->add_control('quesks_'.$field.'_options_'.$key_field, array(
+            'label'         => $key_label,
+            'section'       => 'quesks_'.$field.'_section',
+            'settings'      => 'quesks_'.$field.'_options['.$key_field.']',
+        ));
 }
 add_action( 'customize_register', 'quesks_customize_register' );
 
@@ -158,3 +165,18 @@ function remove_admin_login_header() {
 	remove_action('wp_head', '_admin_bar_bump_cb');
 }
 add_action('get_header', 'remove_admin_login_header');
+
+
+
+function tc2_widgets_init() {
+	register_sidebar( array(
+		'name'          => __( 'Post Sidebar', 'twentysixteen' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'tc2_widgets_init' );

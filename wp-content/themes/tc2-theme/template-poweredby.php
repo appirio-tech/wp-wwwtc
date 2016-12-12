@@ -3,22 +3,19 @@
 
     // get all custom fields
 	$fields = get_fields();
-
+    
     // Dynamic CSS
-	wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
 	$custom_css = "";
 	
-        // background for top banner
-        if ( $fields['background_image']!='' ) {
-            $custom_css .= ".top-banner { background-image: url(".$fields['background_image'].") !important; }";
-        }
-
         if ( $fields['systems_integrators'][0]['background_image'] ) {
             $custom_css .= ".section-integrators .img-txt { background-image: url(".$fields['systems_integrators'][0]['background_image'].") !important; }";
         }
 
     // Render custom css
-	wp_add_inline_style( 'section-custom-style', $custom_css );
+    if ($custom_css!='') {
+        wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
+        wp_add_inline_style( 'section-custom-style', $custom_css );
+    }
 
     get_header();
 ?>
@@ -26,19 +23,12 @@
     <?php get_template_part('parts/right-aside'); ?>
 
     <div class="wrapper powered-by-page">
+    <div class="mask js-close-nav"></div>
         
         <?php get_template_part('parts/top-head'); ?>
-
-        <div class="top-banner-powered-by top-banner-about top-banner">
-            <div class="container">
-                <div class="valign-middle">
-                    <h2 class="titles"><?php echo $fields['title']; ?></h2>
-                    <p class="txt font20"><?php echo $fields['subtitle']; ?></p>
-                </div>
-            </div>
-        </div>
-        <!-- end .top-banner -->
-
+        
+        <?php include(locate_template('parts/hero-carousel.php')); ?>
+        
         <div class="contents powered-by-contents">
             
             <?php if ($fields['powered_by'][0]['title']!=''): ?>

@@ -1,42 +1,22 @@
 <?php
     /* Template Name: Company Page Template */
-
+    
     // get all custom fields
 	$fields = get_fields();
-
-    // Dynamic CSS
-	wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
-	$custom_css = "";
-	
-        // background for top banner
-        if ( $fields['background_image']!='' ) {
-            $custom_css .= ".top-banner { background-image: url(".$fields['background_image'].") !important; }";
-        }
-        
-    // Render custom css
-	wp_add_inline_style( 'section-custom-style', $custom_css );
-
+    
     get_header(); 
 ?>
-
     <?php get_template_part('parts/right-aside'); ?>
-
+    
     <div class="wrapper about-topcoder-page">
+        <div class="mask js-close-nav"></div>
         
         <?php get_template_part('parts/top-head'); ?>
-
-        <div class="top-banner-about top-banner">
-            <div class="container">
-                <div class="valign-middle">
-                    <h2 class="titles"><?php echo $fields['title']; ?></h2>
-                    <p class="txt"><?php echo $fields['subtitle']; ?></p>
-                </div>
-            </div>
-        </div>
-        <!-- end .top-banner -->
-
+        
+        <?php include(locate_template('parts/hero-carousel.php')); ?>
+        
         <?php get_template_part('parts/nav-about-topcoder'); ?>
-
+        
         <div class="contents top-border">
             <div class="tab-contents tab-contents-company">
                 <div class="company-main">
@@ -60,7 +40,7 @@
                             <div class="match-apple-mac pull-left"><img src="<?php echo $fields['company_study_image']; ?>" alt="" /></div>
                         </div>
                         <!-- end .pull-left -->
-                        <div class="infos-list">
+                        <div class="infos-list hidden-xs">
                             <?php foreach( $fields['bullet_points'] as $k=>$v ) : ?>
                             <div class="txt">
                                 <h2 class="title-sub"><?php echo $v['title']; ?></h2>
@@ -83,6 +63,27 @@
                                     <div class="blue-txt-left"><?php echo $fields['company_study_image_caption']; ?></div>
                                 </div>
                             </div>
+
+                             <div id="infoListSlider" class="infos-list visible-xs carousel info-list-carousel default-carousel slide js-slider" data-ride="carousel" data-interval=false>
+                                <ol class="carousel-indicators">
+                                  <?php if ( $fields['bullet_points'] ) : foreach( $fields['bullet_points'] as $k=>$v ) : ?>
+                                    <li data-target="#infoListSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
+                                    <?php endforeach; endif; ?>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                <?php if ( $fields['bullet_points'] ) : foreach( $fields['bullet_points'] as $k=>$v ) : ?>
+                                    <div class="item col <?php if($k===0){ echo 'active';} ?>">
+                                        <div class="txt">
+                                            <h2 class="title-sub"><?php echo $v['title']; ?></h2>
+                                            <p class="infos-list-txt"><?php echo $v['description']; ?></p>
+                                            <br />
+                                        </div>
+                                    </div>
+                                <?php endforeach; endif; ?>
+                                </div>
+                            </div>
+                            <!-- end .infos-list carousel -->
+
                             <p class="infos">
                                 <?php echo $fields['company_study_description']; ?>
                             </p>
@@ -104,3 +105,4 @@
     <!-- end .wrapper -->
 
 <?php get_footer(); ?>
+<div class="overlay"></div>

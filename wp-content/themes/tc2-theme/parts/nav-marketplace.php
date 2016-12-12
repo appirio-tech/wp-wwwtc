@@ -1,4 +1,5 @@
-<nav class="nav-tab nav-tab-marketplace">
+<nav class="nav-tab js-nav-tab nav-tab-marketplace">
+    <a class="nav-current visible-xs"> <?php echo get_the_title() ?></a>
    <?php
         $nav = array(
             'container' 	=> false,

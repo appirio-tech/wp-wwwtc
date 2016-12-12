@@ -1,34 +1,29 @@
-<?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-
-get_header('blog'); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentysixteen' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentysixteen' ); ?></p>
-
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- .site-main -->
-
-		<?php get_sidebar( 'content-bottom' ); ?>
-
+<?php get_header(); ?>
+    
+    <?php get_template_part('parts/right-aside'); ?>
+    
+    <div class="wrapper generic">
+        <div class="mask js-close-nav"></div>
+        
+        <?php get_template_part('parts/top-head'); ?>
+        
+        <div class="top-banner top-banner-blog" ></div>
+        
+        <div class="contents">
+            <a name="fold"></a>
+            
+            <div class="blog-list-item">
+                <div class="blog-list-item-content">
+                    <h2 class="text-center">Oops! That page can’t be found.</h2>
+                    <div class="blog-list-item-excerpt">
+                        It looks like nothing was found at this location.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <?php get_template_part('parts/footer'); ?>
 	</div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
-<?php get_footer('blog'); ?>
+<?php get_template_part('parts/subscribe-modal'); ?>
+<?php get_footer(); ?>

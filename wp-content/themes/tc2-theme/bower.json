@@ -1,0 +1,24 @@
+{
+  "name": "TC2.0",
+  "authors": [
+    "James Marquez <jamesmarquez@gmail.com>"
+  ],
+  "description": "Topcoder2.0 Wordpress Theme",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-touchswipe": "^1.6.18",
+    "bootstrap": "^3.3.6",
+    "coverflow": "https://github.com/coverflowjs/coverflow.git#^3.0.2",
+    "ouibounce": "https://github.com/carlsednaoui/ouibounce.git#^0.0.12"
+  }
+}

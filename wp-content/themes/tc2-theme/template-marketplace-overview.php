@@ -3,16 +3,10 @@
 
     // get all custom fields
 	$fields = get_fields();
-
+        
     // Dynamic CSS
-	wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
 	$custom_css = "";
 	
-        // background for top banner
-        if ( $fields['top_banner'][0]['background_image']!='' ) {
-            $custom_css .= ".top-banner-marketplace-overview { background-image: url(".$fields['top_banner'][0]['background_image'].") !important; }";
-        }
-
         if ( $fields['new_way'][0]['background_image']!='' ) {
             $custom_css .= ".tab-contents-overview .way-info-area { background-image: url(".$fields['new_way'][0]['background_image'].") !important; }";
         }
@@ -27,7 +21,10 @@
 
 
     // Render custom css
-	wp_add_inline_style( 'section-custom-style', $custom_css );
+    if ($custom_css!='') {
+        wp_enqueue_style('section-custom-style', get_template_directory_uri() . '/css/screen.css' );
+        wp_add_inline_style( 'section-custom-style', $custom_css );
+    }
 
     get_header();
 ?>
@@ -35,31 +32,12 @@
     <?php get_template_part('parts/right-aside'); ?>
 
     <div class="wrapper marketplace-page marketplace-overview-page">
+    <div class="mask js-close-nav"></div>
 
         <?php get_template_part('parts/top-head'); ?>
-
-        <div class="top-banner-marketplace-overview top-banner-marketplace top-banner">
-            <div class="container">
-                <div class="valign-middle">
-                    <div class="info-area">
-                        <div class="match-apple-imac"><img src="<?php echo $fields['top_banner'][0]['image']; ?>" alt="" /></div>
-                        <div class="mains">
-                            <h3 class="titles titles-white"><?php echo $fields['top_banner'][0]['title']; ?></h3>
-                            <p class="detail detail-white"><?php echo $fields['top_banner'][0]['description']; ?></p>
-                            <a href="<?php echo $fields['top_banner'][0]['get_started_button'][0]['url']; ?>" target="<?php echo $fields['top_banner'][0]['get_started_button'][0]['target_window']; ?>" class="btn-blue"><?php echo $fields['top_banner'][0]['get_started_button'][0]['label']; ?></a>
-                            <a href="#" class="btn-white-video btn-video" data-toggle="modal" data-target="#modal-video" data-video="<?php echo $fields['top_banner'][0]['video_button'][0]['youtube_id']; ?>">
-                                <span class="icon-video"><i class="icons"></i></span>
-                                <span class="font-txt"><?php echo $fields['top_banner'][0]['video_button'][0]['label']; ?></span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end .info-area -->
-                </div>
-            </div>
-        </div>
-        <!-- end .top-banner -->
-
-
+        
+        <?php include(locate_template('parts/hero-carousel.php')); ?>
+        
         <?php get_template_part('parts/nav-marketplace'); ?>
 
 
@@ -117,7 +95,7 @@
                 <div class="guided-info-area info-area">
                     <div class="match-web-page"><img src="<?php echo $fields['connect_process'][0]['image']; ?>" alt="" /></div>
                     <div class="mains">
-                        <h3 class="titles"><?php echo $fields['connect_process'][0]['title']; ?></h3>
+                        <h3 class="titles <?php if(!$fields['connect_process'][0]['image']){echo 'no-icon';} ?>"><?php echo $fields['connect_process'][0]['title']; ?></h3>
                         <p class="detail">
                             <?php echo $fields['connect_process'][0]['description']; ?>
                         </p>

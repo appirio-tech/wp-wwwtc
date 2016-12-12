@@ -24,7 +24,7 @@
     
 	// The Query
 	$query = new WP_Query( $args );
-  
+  if ($query->posts){
         $html = '<div id="carousel-quotes-'.$unique_id.'" class="carousel slide" data-ride="carousel" data-interval="">
                     <div class="head-box">';
         
@@ -64,8 +64,9 @@
         $html .= '</div><!-- end .carousel-inner -->
             </div><!-- end .carousel -->';
 	
-	// Restore original Post Data
-	wp_reset_postdata();
+    	// Restore original Post Data
+    	wp_reset_postdata();
+    };
 
     echo $html;
 

@@ -24,7 +24,7 @@
 ?>
 
 	<?php /*<link href="<?php echo get_template_directory_uri(); ?>/appirio-50-50/css/fonts.css" rel="stylesheet" type="text/css">*/ ?>
-    <link href="//wwwtc.wpengine.com/wp-content/themes/tc2-theme/appirio-50-50/css/screen.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo get_template_directory_uri(); ?>/appirio-50-50/css/screen.css" rel="stylesheet" type="text/css">
     <script src="//wwwtc.wpengine.com/wp-content/themes/tc2-theme/appirio-50-50/js/jquery-2.1.4.js"></script>
     <script src="//wwwtc.wpengine.com/wp-content/themes/tc2-theme/appirio-50-50/js/jquery.mousewheel.js"></script>
 	<script src="//wwwtc.wpengine.com/wp-content/themes/tc2-theme/appirio-50-50/js/jquery.touchSwipe.js"></script>

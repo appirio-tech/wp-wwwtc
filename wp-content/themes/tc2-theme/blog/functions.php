@@ -451,3 +451,18 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+
+/* excerpt */
+function new_excerpt_more($more) {
+	$post_id	= get_the_ID();
+	$permalink 	= get_permalink( $post_id );
+	$title 		= get_the_title($post_id);
+	return 	'...';
+}
+add_filter ( 'excerpt_more', 'new_excerpt_more' );
+
+function custom_excerpt_length($length) {
+	return 27;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
