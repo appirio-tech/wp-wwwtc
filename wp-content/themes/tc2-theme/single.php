@@ -12,7 +12,7 @@ $categories 	= 	get_the_category();
 $author 		= 	get_the_author();
 $tags	 		= 	wp_get_post_tags();
 get_header(); ?>
-
+   
     <?php get_template_part('parts/right-aside'); ?>
     
     <div class="wrapper generic">
@@ -26,7 +26,7 @@ get_header(); ?>
                     the_post();
                     
                     if ( has_post_thumbnail() ) {
-                        $bg_url = get_the_post_thumbnail_url();
+                        $bg_url = get_the_post_thumbnail_url($post->ID, array(1200, 600));
                     } else {
                         $bg_url = catch_that_image();
                     }
@@ -70,7 +70,12 @@ get_header(); ?>
                         <div class="entry-content">
                             
                             <div class="tc-share">
-                                <div class="addthis_inline_share_toolbox" data-url="https://www.topcoder.com/blog/<?php echo $post->post_name; ?>/" data-title="<?php the_title(); ?>"></div>
+                                <div class="addthis_inline_share_toolbox" 
+                                    data-url="https://www.topcoder.com/blog/<?php echo $post->post_name; ?>/" 
+                                    data-title="<?php the_title(); ?>"
+                                    data-media="<?php echo $bg_url; ?>"
+                                    data-image="<?php echo $bg_url; ?>"
+                                    ></div>
                             </div>
                            
                             <?php

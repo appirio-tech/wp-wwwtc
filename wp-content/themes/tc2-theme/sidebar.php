@@ -12,7 +12,8 @@
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
 	    
 	    <section id="mc_embed_signup_widget" class="widget">
-	        <h2 class="widget-title">Subscribe for Updates</h2>
+	        <h2 class="widget-title with-subtitle">Great Stories in Crowdsourcing.</h2>
+	        <h3 class="widget-subtitle">Delivered to Your Inbox.</h3>
 	        
 	        <div id="mc_embed_signup">
                 <form action="//topcoder.us13.list-manage.com/subscribe/post?u=65bd5a1857b73643aad556093&amp;id=45194053ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">

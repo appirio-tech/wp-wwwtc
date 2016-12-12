@@ -24,7 +24,7 @@
                     </div>
                     <?php 
                         if ( has_post_thumbnail() ) {
-                            $bg_url = get_the_post_thumbnail_url();
+                            $bg_url = get_the_post_thumbnail_url($post->ID, array(1200, 600));
                         } else {
                             $bg_url = catch_that_image();
                         }

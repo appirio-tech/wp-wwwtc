@@ -831,7 +831,7 @@ jQuery(document).ready(function($){
     // Exit Intent
     if ( $('#modalExitIntent').length>0 ) {
         var _ouibounce = ouibounce(false, {
-            aggressive: true,
+            aggressive: false,
             timer: 0,
             callback: function() {
                 $('#modalExitIntent').modal('show');

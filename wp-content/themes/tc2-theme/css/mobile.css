@@ -88,8 +88,8 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .move-up {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 31px;
+    bottom: 66px;
     z-index: -10;
     opacity: 0;
     background-image: url(../i/sprite.png);
@@ -6206,7 +6206,7 @@ The `sprites` mixin generates identical output to the CSS template
     padding: 40px 20px;
   }
   .blog .blog-list-item-content h2, .single .blog-list-item-content h2, .archive .blog-list-item-content h2, .search .blog-list-item-content h2, .error404 .blog-list-item-content h2 {
-    font-size: 30px;
+    font-size: 29px;
   }
   .blog .blog-list-item-content .blog-list-item-excerpt, .single .blog-list-item-content .blog-list-item-excerpt, .archive .blog-list-item-content .blog-list-item-excerpt, .search .blog-list-item-content .blog-list-item-excerpt, .error404 .blog-list-item-content .blog-list-item-excerpt {
     margin: 10px auto;
@@ -6339,6 +6339,20 @@ The `sprites` mixin generates identical output to the CSS template
   .has-middle-page-navigation .hero-carousel .carousel-inner .item,
   .admin-bar.has-middle-page-navigation .hero-carousel .carousel-inner .item {
     height: calc(100vh - 45px);
+  }
+  .blog .contents, .single .contents, .archive .contents, .search .contents, .error404 .contents {
+    width: 90%;
+  }
+  .blog .top-banner.top-banner-blog {
+    height: 100px;
+  }
+  .blog .blog-list-item img {
+    height: 100%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
+  .blog .blog-list-item-content h2:after {
+    display: none;
   }
 }
 

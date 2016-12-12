@@ -455,7 +455,7 @@ The `sprites` mixin generates identical output to the CSS template
     padding: 0 58px 0 28px;
   }
   .generic .generic-left-image-right-text .match-iphone img {
-    height: 379px;
+    height: auto;
   }
   .generic .generic-left-image-right-text .match-iphone.left-truncate {
     padding: 0;
@@ -1484,6 +1484,9 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .hero-carousel .carousel-control {
     width: 10%;
+  }
+  .blog .contents, .single .contents, .archive .contents, .search .contents, .error404 .contents {
+    width: 90%;
   }
 }
 

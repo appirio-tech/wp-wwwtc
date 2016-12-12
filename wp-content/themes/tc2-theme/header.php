@@ -8,6 +8,23 @@
     <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no">
+    <?php 
+    if ( is_single() ) : 
+    
+        if ( has_post_thumbnail($post->ID) ) {
+            $bg_url = get_the_post_thumbnail_url($post->ID, 'full');
+        } else {
+            $bg_url = catch_that_image();
+        }
+    ?>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@topcoder">
+    <meta name="twitter:creator" content="@topcoder">
+    <meta name="twitter:title" content="<?php echo $post->post_title; ?>">
+    <meta name="twitter:image" content="<?php echo $bg_url; ?>">
+    <link rel="canonical" href="https://www.topcoder.com/blog/<?php echo $post->post_name; ?>/">
+    <?php endif; ?>
+    
     <title><?php bloginfo('name'); ?> <?php is_home() ? '' : ' | ' . wp_title(''); ?></title>
 
     <?php wp_head(); ?>
