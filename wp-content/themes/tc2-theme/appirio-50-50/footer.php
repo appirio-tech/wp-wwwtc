@@ -59,7 +59,7 @@
 						<h2>It's time to deliver with crowdsourcing </h2>
 						<p>Which project has you most excited today? Use crowdsourcing to help you innovate and execute on it, right now. </p>
 						<div class="btn-group">
-							<a href="https://accounts.topcoder.com/connect" target="_blank" class="btn btn-primary">Customer Log In</a>
+							<a href="https://accounts.topcoder.com/#!/connect?retUrl=https://connect.topcoder.com/" target="_blank" class="btn btn-primary">Customer Log In</a>
 						</div>
 					</div>
 				</div>
@@ -85,7 +85,7 @@
 						<h2>It's time to deliver with crowdsourcing </h2>
 						<p>Which project has you most excited today? Use crowdsourcing to help you innovate and execute on it, right now. </p>
 						<div class="btn-group">
-							<a href="https://accounts.topcoder.com/connect" target="_blank" class="btn btn-primary">Customer Log In</a>
+							<a href="https://accounts.topcoder.com/#!/connect?retUrl=https://connect.topcoder.com/" target="_blank" class="btn btn-primary">Customer Log In</a>
 						</div>
 					</div>
 				</div>
