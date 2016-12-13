@@ -52,8 +52,8 @@
   // move-up
   .move-up{
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 31px;
+    bottom: 66px;
     z-index: -10;
     opacity: 0;
     @include sprite($ico-up);
@@ -6478,7 +6478,7 @@
             padding: 40px 20px;
             
             h2 {
-                font-size: 30px;
+                font-size: 29px;
             }
             
             .blog-list-item-excerpt {
@@ -6649,6 +6649,26 @@
                     height: calc(100vh - 45px);
                 }
             }
+        }
+    }
+    
+    .blog, .single, .archive, .search, .error404 {
+        .contents {
+            width: 90%;
+        }   
+    }
+    
+    .blog {
+        .top-banner.top-banner-blog {
+            height: 100px;
+        }
+        .blog-list-item img {
+            height: 100%;
+            transform: translate(-50%, -50%);
+            width: auto;
+        }
+        .blog-list-item-content h2:after {
+            display: none;
         }
     }
     

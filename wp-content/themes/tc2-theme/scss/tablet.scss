@@ -595,7 +595,7 @@
                 padding: 0 58px 0 28px;
                 
                 img {
-                    height: 379px;
+                    height: auto;
                 }
                 
                 &.left-truncate {
@@ -645,7 +645,10 @@
                 height: 40px;
                 line-height: 40px;
                 border-radius: 20px;
-                width: 250px;
+                min-width: 250px;
+                width: auto;
+                padding: 0 40px;
+                display: inline-block;
             }
         }
         
@@ -2102,6 +2105,12 @@
         .carousel-control {
             width: 10%;
         }
+    }
+    
+    .blog, .single, .archive, .search, .error404 {
+        .contents {
+            width: 90%;
+        }   
     }
 }
 
