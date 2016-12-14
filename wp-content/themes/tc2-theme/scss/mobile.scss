@@ -6569,6 +6569,11 @@
         }
         .sidebar {
             margin: 40px 0 0;
+            
+            .widget-title, 
+            .widget-subtitle {
+                font-size: 18px;
+            }
         }
     }
     

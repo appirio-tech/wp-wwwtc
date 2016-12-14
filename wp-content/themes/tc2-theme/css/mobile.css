@@ -6289,6 +6289,14 @@ The `sprites` mixin generates identical output to the CSS template
   .blog .sidebar, .single .sidebar, .archive .sidebar, .search .sidebar, .error404 .sidebar {
     margin: 40px 0 0;
   }
+  .blog .sidebar .widget-title,
+  .blog .sidebar .widget-subtitle, .single .sidebar .widget-title,
+  .single .sidebar .widget-subtitle, .archive .sidebar .widget-title,
+  .archive .sidebar .widget-subtitle, .search .sidebar .widget-title,
+  .search .sidebar .widget-subtitle, .error404 .sidebar .widget-title,
+  .error404 .sidebar .widget-subtitle {
+    font-size: 18px;
+  }
   .hero-carousel .carousel-inner .item .carousel-caption h1 {
     font-size: 29px;
     margin-top: 100px;
@@ -6371,3 +6379,5 @@ The `sprites` mixin generates identical output to the CSS template
     margin: 0 10px;
   }
 }
+
+/*# sourceMappingURL=mobile.css.map */

@@ -488,7 +488,10 @@ The `sprites` mixin generates identical output to the CSS template
     height: 40px;
     line-height: 40px;
     border-radius: 20px;
-    width: 250px;
+    min-width: 250px;
+    width: auto;
+    padding: 0 40px;
+    display: inline-block;
   }
   .generic .innovation-info-detail .main-boxs .main-lefts {
     margin-right: 0;
@@ -1566,6 +1569,10 @@ The `sprites` mixin generates identical output to the CSS template
   .single .sidebar .sidebar-ad-landscape {
     display: block;
   }
+  .single .sidebar .widget-title,
+  .single .sidebar .widget-subtitle {
+    font-size: 24px;
+  }
   .introducing_article .navigation .nav-previous, .introducing_article .navigation .nav-next {
     width: 50%;
   }
@@ -1612,3 +1619,5 @@ The `sprites` mixin generates identical output to the CSS template
     background-size: 100% auto;
   }
 }
+
+/*# sourceMappingURL=tablet.css.map */
