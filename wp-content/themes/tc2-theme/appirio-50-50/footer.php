@@ -33,6 +33,7 @@
                             <a href="javascript:;" class="logo"></a>
                             <ul class="social">
                                 <li class="terms"><a href="https://www.topcoder.com/community/how-it-works/terms/" target="_blank">TERMS</a></li>
+                                <li class="terms"><a href="http://topcoder.com/community/how-it-works/privacy-policy/" target="_blank">PRIVACY POLICY</a></li>
                                 <li><a href="http://www.twitter.com/topcoder" target="_blank" class="icon icon-twitter"></a></li>
                                 <li><a href="https://www.facebook.com/topcoder" target="_blank" class="icon icon-facebook"></a></li>
                                 <li><a href="https://www.linkedin.com/company/topcoder" target="_blank" class="icon icon-linkin"></a></li>
@@ -69,7 +70,7 @@
 						<h2>It's time to compete and win </h2>
 						<p>Which challenges will you compete in today? Topcoder always has new ways for you to earn money and grow your skills.</p>
 						<div class="btn-group">
-							<a href="https://www.topcoder.com/login/" target="_blank" class="btn btn-primary">Community Log In</a>
+							<a href="https://accounts.topcoder.com/#!/member?retUrl=https%3A%2F%2Fwww.topcoder.com%2Fmy-dashboard%2F" target="_blank" class="btn btn-primary">Community Log In</a>
 						</div>
 					</div>
 				</div>
@@ -101,7 +102,7 @@
 						<h2>It's time to compete and win </h2>
 						<p>Which challenges will you compete in today? Topcoder always has some new way for you to earn money and grow your skills. </p>
 						<div class="btn-group">
-							<a href="https://www.topcoder.com/login/" target="_blank" class="btn btn-primary">Community Log In</a>
+							<a href="https://accounts.topcoder.com/#!/member?retUrl=https%3A%2F%2Fwww.topcoder.com%2Fmy-dashboard%2F" target="_blank" class="btn btn-primary">Community Log In</a>
 						</div>
 					</div>
 				</div>
