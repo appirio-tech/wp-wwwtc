@@ -388,6 +388,267 @@ a:hover {
   display: none;
 }
 
+/* Landing Page */
+.landing-page .main-container {
+  overflow-y: scroll;
+  z-index: 1000;
+}
+
+.landing-page .section-full-height {
+  height: 100vh;
+}
+
+.landing-page .section-top-banner {
+  background-attachment: scroll;
+}
+
+.landing-page .section-top-banner .top-banner {
+  padding: 0;
+}
+
+.landing-page .section-top-banner h2.titles {
+  font-weight: 300;
+  line-height: normal;
+  margin: 0 auto 39px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  width: 1023px;
+}
+
+.landing-page .section-crowdsourcing {
+  padding: 100px 0 3px;
+}
+
+.landing-page .section-crowdsourcing h2.titles {
+  color: #37373B;
+  font-weight: normal;
+}
+
+.landing-page .section-crowdsourcing h3.col-titles {
+  font-size: 33px;
+  margin-top: 30px;
+}
+
+.landing-page .section-crowdsourcing .col .boxs {
+  margin: 0 30px;
+}
+
+.landing-page .section-crowdsourcing .col:first-child .boxs {
+  margin: 0 30px 0 65px;
+}
+
+.landing-page .section-crowdsourcing .col:last-child .boxs {
+  margin: 0 65px 0 30px;
+}
+
+.landing-page .section-crowdsourcing .icons {
+  height: 75px;
+  width: 92px;
+}
+
+.landing-page .section-crowdsourcing .icons img {
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+.landing-page .section-crowdsourcing .row-bottom {
+  background: url(../i/green-image@2x.png) 50% 50% no-repeat;
+  background-size: cover;
+  margin-top: 97px;
+  padding: 87px 0;
+  position: relative;
+  width: 100%;
+}
+
+.landing-page .section-crowdsourcing .row-bottom h2.titles-blue, .landing-page .section-crowdsourcing .row-bottom .txt {
+  color: #fff;
+  text-align: left;
+  margin-left: 15%;
+  width: 60%;
+}
+
+.landing-page .section-crowdsourcing .row-bottom .btn-get-the-study {
+  background: #fff;
+  color: #0A71E6;
+  min-width: 184px;
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.landing-page .section-crowdsourcing .row-bottom .btn-get-the-study:hover {
+  background: #eee;
+}
+
+.landing-page .section-community {
+  background-attachment: scroll;
+  background-size: cover;
+  display: inline;
+  float: left;
+  height: 600px;
+  text-align: center;
+  width: calc(50% - 2px);
+}
+
+.landing-page .section-community .info-main {
+  padding: 0;
+}
+
+.landing-page .section-community .info-main .titles {
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 490px;
+}
+
+.landing-page .section-community .info-main .txt {
+  font-size: 16px;
+  line-height: normal;
+  margin: 26px auto 0;
+  padding-bottom: 0;
+  text-align: center;
+  width: 490px;
+}
+
+.landing-page .section-community .info-main .btn-meet-our-community {
+  background: #fff;
+  color: #0A71E6;
+  margin-top: 47px;
+}
+
+.landing-page .section-community .info-main .btn-meet-our-community:hover {
+  background: #eee;
+}
+
+.landing-page .section-get-done, .landing-page .section-marketplace {
+  background-attachment: scroll;
+  background-size: cover;
+  display: inline;
+  float: right;
+  height: 600px;
+  width: calc(50% - 1px);
+}
+
+.landing-page .section-get-done .info-main, .landing-page .section-marketplace .info-main {
+  margin: 0 auto;
+  min-height: 0;
+  padding: 0;
+  text-align: center;
+  width: 490px;
+}
+
+.landing-page .section-get-done .info-main .titles, .landing-page .section-marketplace .info-main .titles {
+  color: #fff;
+  font-size: 27px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 490px;
+}
+
+.landing-page .section-get-done .info-main .txt, .landing-page .section-marketplace .info-main .txt {
+  color: #fff;
+  font-size: 16px;
+  line-height: normal;
+  margin-top: 26px;
+  padding: 0;
+  text-align: center;
+}
+
+.landing-page .section-get-done .info-main .btn-explore-the-marketplace, .landing-page .section-marketplace .info-main .btn-explore-the-marketplace {
+  background: #fff;
+  color: #0A71E6;
+  margin: 47px 0 0;
+  min-width: 240px;
+}
+
+.landing-page .section-get-done .info-main .btn-explore-the-marketplace:hover, .landing-page .section-marketplace .info-main .btn-explore-the-marketplace:hover {
+  background: #eee;
+}
+
+.landing-page .section-our-products {
+  clear: both;
+  padding: 100px 0;
+}
+
+.landing-page .section-our-products .col {
+  min-height: 350px;
+}
+
+.landing-page .section-our-products .titles {
+  color: #37373B;
+}
+
+.landing-page .section-our-products .icons {
+  height: 64px;
+  margin: 0 auto;
+  width: 64px;
+}
+
+.landing-page .section-our-products .icons img {
+  height: auto;
+  padding-bottom: 0 !important;
+  width: 100%;
+}
+
+.landing-page .section-our-products .col-titles {
+  font-size: 33px;
+  line-height: normal;
+  margin: 32px 0 0;
+}
+
+.landing-page .section-our-products .txt {
+  font-size: 18px;
+  line-height: normal;
+}
+
+.landing-page .section-our-products .txt a {
+  color: #0A71E6;
+}
+
+.landing-page .section-quotes .carousel-inner .item {
+  background-attachment: scroll;
+  height: 100vh;
+}
+
+.landing-page .section-quotes .carousel-inner .item .txt {
+  font-size: 42px;
+  font-style: italic;
+  line-height: normal;
+  width: 90%;
+}
+
+.landing-page .section-quotes .carousel-inner .item .txt-name {
+  font-size: 18px;
+}
+
+.landing-page .section-quotes .head-box {
+  background: #EDEDF2;
+}
+
+.landing-page .section-quotes .head-box .carousel-indicators li .cover {
+  background: #1e74d6;
+}
+
+.landing-page .section-contact {
+  background: #EDEDF2;
+  height: calc(100vh - 63px);
+}
+
+.landing-page .section-contact .titles {
+  color: #37373B;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  width: 90%;
+}
+
 /* .header */
 .header {
   position: absolute;
@@ -5636,37 +5897,6 @@ div.wpcf7-validation-errors {
   margin-top: 15px;
 }
 
-.navbar-dots {
-  height: auto;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 19px;
-  z-index: 988;
-}
-
-.navbar-dots li {
-  margin-bottom: 2px;
-}
-
-.navbar-dots li:last-child {
-  margin-bottom: 0;
-}
-
-.navbar-dots li a, .navbar-dots li a:focus {
-  background: transparent;
-  border: 1px solid #dbdadb;
-  border-radius: 50%;
-  display: block;
-  height: 9px;
-  padding: 0;
-  width: 9px;
-}
-
-.navbar-dots li.active a {
-  background: #dbdadb;
-}
-
 .go-to-next {
   bottom: 10px;
   color: #fff;
@@ -7822,5 +8052,3 @@ div.wpcf7-validation-errors {
     line-height: 32px;
   }
 }
-
-/*# sourceMappingURL=screen.css.map */

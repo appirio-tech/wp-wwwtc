@@ -46,8 +46,7 @@
     
     <div class="wrapper landing-page">
     <div class="mask js-close-nav"></div>
-        <div class="main-container">
-            <section id="home-section-1" class="section section-top-banner widget active">
+            <section id="home-section-1" class="section section-top-banner section-full-height">
 
                 <?php get_template_part('parts/top-head'); ?>
                 
@@ -64,194 +63,180 @@
                         </div>
                     </div>
                 <?php endif; ?>
-                
-                <a href="javascript:;" class="go-to-next"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
             </section>
             <!-- end .section-top-banner -->
 
             <?php if ($fields['sec2_title']!=''): $section_ctr++; ?>
-                <section id="home-section-2" class="section section-crowdsourcing widget">
-                    <div class="container">
-                        <div class="valign-middle ">
-                            <h2 class="titles"><?php echo $fields['sec2_title']; ?></h2>
-                            <div class="row hidden-xs">
-
+            <section id="home-section-2" class="section section-crowdsourcing">
+                <div class="container">
+                    <div class="valign-middle ">
+                        <h2 class="titles"><?php echo $fields['sec2_title']; ?></h2>
+                        <div class="row hidden-xs">
+                            <?php if ( $fields['sec2_three_columns'] ) : foreach( $fields['sec2_three_columns'] as $k=>$v ) : ?>
+                                <div class="col col-talent col-xs-4">
+                                    <div class="boxs">
+                                        <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" /></div>
+                                        <h3 class="col-titles"><?php echo $v['title']; ?></h3>
+                                        <p class="txt"><?php echo $v['description']; ?></p>
+                                    </div>
+                                </div>
+                                <!-- end .col-talent -->
+                            <?php endforeach; endif; ?>
+                        </div>
+                        <!-- end .row -->
+                        
+                        <div id="clientSlider" class="visible-xs carousel default-carousel client-carousel slide js-slider" data-ride="carousel" data-interval=false>
+                            <ol class="carousel-indicators">
                                 <?php if ( $fields['sec2_three_columns'] ) : foreach( $fields['sec2_three_columns'] as $k=>$v ) : ?>
-                                    <div class="col col-talent col-xs-4">
-                                        <div class="boxs">
-                                            <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" /></div>
+                                <li data-target="#clientSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
+                                <?php endforeach; endif; ?>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                    <?php if ( $fields['sec2_three_columns'] ) : foreach( $fields['sec2_three_columns'] as $k=>$v ) : ?>
+                                    <div class="item col col-talent  <?php if($k===0){ echo 'active';} ?>">
+                                        <div class="boxs fluid">
+                                            <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" />
+                                            </div>
                                             <h3 class="col-titles"><?php echo $v['title']; ?></h3>
                                             <p class="txt"><?php echo $v['description']; ?></p>
                                         </div>
                                     </div>
                                     <!-- end .col-talent -->
                                 <?php endforeach; endif; ?>
-
                             </div>
-                            <!-- end .row -->
-
-
-
-                <div id="clientSlider" class="visible-xs carousel default-carousel client-carousel slide js-slider" data-ride="carousel" data-interval=false>
-                         <ol class="carousel-indicators">
-                         <?php if ( $fields['sec2_three_columns'] ) : foreach( $fields['sec2_three_columns'] as $k=>$v ) : ?>
-                            <li data-target="#clientSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
-                            <?php endforeach; endif; ?>
-                        </ol>
-                    <div class="carousel-inner" role="listbox">
-                               <?php if ( $fields['sec2_three_columns'] ) : foreach( $fields['sec2_three_columns'] as $k=>$v ) : ?>
-
-                            <div class="item col col-talent  <?php if($k===0){ echo 'active';} ?>">
-                                <div class="boxs fluid">
-                                    <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" />
-                                    </div>
-                                    <h3 class="col-titles"><?php echo $v['title']; ?></h3>
-                                    <p class="txt"><?php echo $v['description']; ?></p>
-                                </div>
-                            </div>
-                            <!-- end .col-talent -->
-                        <?php endforeach; endif; ?>
-                    </div>
-                </div>
-                <!-- /.default-carousel -->
-
-                <div class="row row-bottom">
-                    <h2 class="titles-blue"><?php echo $fields['sec2_bottom_title']; ?></h2>
-                    <p class="txt"><?php echo $fields['sec2_bottom_subtitle']; ?></p>
-                    <a href="<?php echo $fields['sec2_bottom_button_url']; ?>" target="<?php echo $fields['sec2_bottom_button_target_window']; ?>" class="btn-blue btn-get-the-study"><?php echo $fields['sec2_bottom_button_label']; ?></a>
-                </div>
-                <!-- end .row -->
-
-            </div>
-        </section>
-        <!-- end .section-crowdsourcing -->
-    <?php endif; ?>
-
-    <?php if ($fields['sec3_title']!=''): $section_ctr++; ?>
-        <section id="home-section-3" class="section section-community widget">
-            <div class="container">
-                <div class="valign-middle">
-                    <?php if ( $fields['sec3_floating_image']!='' ) : ?>
-                        <div class="match-ipad-rotate"><img src="<?php echo $fields['sec3_floating_image']; ?>" alt="" class="img-responsive" /></div>
-                    <?php endif; ?>
-                    <div class="info-main">
-                        <h3 class="titles"><?php echo $fields['sec3_title']; ?></h3>
-                        <p class="txt"><?php echo $fields['sec3_description']; ?></p>
-                        <a href="<?php echo $fields['sec3_button_url']; ?>" target="<?php echo $fields['sec3_button_target_window']; ?>" class="btn-blue btn-meet-our-community"><?php echo $fields['sec3_button_label']; ?></a>
-                    </div>
-                    <!-- end .info-main -->
-                </div>
-            </div>
-        </section>
-        <!-- end .section-community -->
-    <?php endif; ?>
-
-    <?php if ($fields['sec4_title']!=''): $section_ctr++; ?>
-        <section id="home-section-4" class="section section-get-done widget">
-            <div class="container">
-                <div class="valign-middle">
-                <div class="valign-con">
-                    <h2 class="titles"><?php echo $fields['sec4_title']; ?></h2>
-                    <div class="row-area">
-                        <div class="left-box">
-                            <?php if ( $fields['sec4_floating_image']!='' ) : ?>
-                                <div class="match-apple-imac"><img src="<?php echo $fields['sec4_floating_image']; ?>" alt="" class="img-responsive" /></div>
-                            <?php endif; ?>
                         </div>
+                        <!-- /.default-carousel -->
+                        
+                        <?php if (  $fields['sec2_bottom_title']!='' ): ?>
+                        <div class="row row-bottom">
+                            <h2 class="titles-blue"><?php echo $fields['sec2_bottom_title']; ?></h2>
+                            <p class="txt"><?php echo $fields['sec2_bottom_subtitle']; ?></p>
+                            <a href="<?php echo $fields['sec2_bottom_button_url']; ?>" target="<?php echo $fields['sec2_bottom_button_target_window'][0]; ?>" class="btn-blue btn-get-the-study"><?php echo $fields['sec2_bottom_button_label']; ?></a>
+                        </div>
+                        <!-- end .row -->
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
+            <!-- end .section-crowdsourcing -->
+            <?php endif; ?>
+            
+            <?php if ($fields['sec3_title']!=''): $section_ctr++; ?>
+            <section id="home-section-3" class="section section-community">
+                <div class="container">
+                    <div class="valign-middle">
+                        <?php if ( $fields['sec3_floating_image']!='' ) : ?>
+                            <div class="match-ipad-rotate"><img src="<?php echo $fields['sec3_floating_image']; ?>" alt="" class="img-responsive" /></div>
+                        <?php endif; ?>
                         <div class="info-main">
-                            <p class="txt"><?php echo $fields['sec4_description']; ?></p>
-                            <a href="<?php echo $fields['sec4_button_url']; ?>" target="<?php echo $fields['sec4_button_target_window']; ?>" class="btn-blue btn-explore-our-offerings"><?php echo $fields['sec4_button_label']; ?></a>
+                            <h3 class="titles"><?php echo $fields['sec3_title']; ?></h3>
+                            <p class="txt"><?php echo $fields['sec3_description']; ?></p>
+                            <a href="<?php echo $fields['sec3_button_url']; ?>" target="<?php echo $fields['sec3_button_target_window']; ?>" class="btn-blue btn-meet-our-community"><?php echo $fields['sec3_button_label']; ?></a>
                         </div>
                         <!-- end .info-main -->
                     </div>
-                    <!-- end .row-area -->
-                    </div>
-                <!-- /.valign-con -->
                 </div>
-            </div>
-        </section>
-        <!-- end .section-get-done -->
-    <?php endif; ?>
-
-    <?php if ($fields['sec5_title']!=''): $section_ctr++; ?>
-        <section id="home-section-5" class="section section-marketplace widget">
-            <div class="container">
-                <div class="valign-middle">
-                    <div class="info-main">
-                        <h3 class="titles"><?php echo $fields['sec5_title']; ?></h3>
-                        <p class="txt"><?php echo $fields['sec5_description']; ?></p>
-                        <a href="<?php echo $fields['sec5_button_url']; ?>" target="<?php echo $fields['sec5_button_target_window']; ?>" class="btn-blue btn-explore-the-marketplace"><?php echo $fields['sec5_button_label']; ?></a>
+            </section>
+            <!-- end .section-community -->
+            <?php endif; ?>
+            
+            <?php if ($fields['sec4_title']!=''): $section_ctr++; ?>
+            <section id="home-section-4" class="section section-get-done">
+                <div class="container">
+                    <div class="valign-middle">
+                        <h2 class="titles"><?php echo $fields['sec4_title']; ?></h2>
+                        <div class="row-area">
+                            <?php if ( $fields['sec4_floating_image']!='' ) : ?>
+                            <div class="left-box">
+                                <div class="match-apple-imac"><img src="<?php echo $fields['sec4_floating_image']; ?>" alt="" class="img-responsive" /></div>
+                            </div>
+                            <?php endif; ?>
+                            <div class="info-main">
+                                <p class="txt"><?php echo $fields['sec4_description']; ?></p>
+                                <a href="<?php echo $fields['sec4_button_url']; ?>" target="<?php echo $fields['sec4_button_target_window']; ?>" class="btn-blue btn-explore-our-offerings"><?php echo $fields['sec4_button_label']; ?></a>
+                            </div>
+                            <!-- end .info-main -->
+                        </div>
+                        <!-- end .row-area -->
                     </div>
-                    <!-- end .info-main -->
                 </div>
-            </div>
-        </section>
-        <!-- end .section-marketplace -->
-    <?php endif; ?>
+            </section>
+            <!-- end .section-get-done -->
+            <?php endif; ?>
+            
+            <?php if ($fields['sec5_title']!=''): $section_ctr++; ?>
+                <section id="home-section-5" class="section section-marketplace">
+                    <div class="container">
+                        <div class="valign-middle">
+                            <div class="info-main">
+                                <h3 class="titles"><?php echo $fields['sec5_title']; ?></h3>
+                                <p class="txt"><?php echo $fields['sec5_description']; ?></p>
+                                <a href="<?php echo $fields['sec5_button_url']; ?>" target="<?php echo $fields['sec5_button_target_window']; ?>" class="btn-blue btn-explore-the-marketplace"><?php echo $fields['sec5_button_label']; ?></a>
+                            </div>
+                            <!-- end .info-main -->
+                        </div>
+                    </div>
+                </section>
+                <!-- end .section-marketplace -->
+            <?php endif; ?>
 
-    <?php if ($fields['sec6_title']!=''): $section_ctr++; ?>
-        <section id="home-section-6" class="section section-our-products widget">
-            <div class="container">
-                <div class="valign-middle">
-                    <h2 class="titles"><?php echo $fields['sec6_title']; ?></h2>
-
-                    <div class="row row-products hidden-xs">
-
-                        <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
-                            <div class="col col-xs-4">
-                             <div class="boxs">
-                                <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" height="125px" style="padding-bottom: 20px;"/>
+            <?php if ($fields['sec6_title']!=''): $section_ctr++; ?>
+            <section id="home-section-6" class="section section-our-products">
+                <div class="container">
+                    <div class="valign-middle">
+                        <h2 class="titles"><?php echo $fields['sec6_title']; ?></h2>
+                        
+                        <div class="row row-products hidden-xs">
+                            <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
+                                <div class="col col-xs-4">
+                                 <div class="boxs">
+                                    <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt="" height="125px" style="padding-bottom: 20px;"/></div>
                                 </div>
-                                <h3 class="col-titles">&nbsp;</h3>
-                                <p class="txt">&nbsp;</p>
+                                <div class="boxs">
+                                    <h3 class="col-titles"><?php echo $v['title']; ?></h3>
+                                    <div class="txt"><?php echo $v['description']; ?></div>
+                                </div>
                             </div>
-                            <div class="boxs">
-                                <h3 class="col-titles"><?php echo $v['title']; ?></h3>
-                                <p class="txt"><?php echo $v['description']; ?></p>
-                            </div>
-                        </div>
-                    <?php endforeach; endif; ?>
-                </div>
-
-                <div id="offeringSlider" class="visible-xs carousel default-carousel offering-carousel slide js-slider" data-ride="carousel" data-interval=false>
-                         <ol class="carousel-indicators">
-                          <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
-                            <li data-target="#offeringSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
-                            <?php endforeach; endif; ?>
-                        </ol>
-                    <div class="carousel-inner" role="listbox">
-
-                    <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
-                            <div class="item col col-talent  <?php if($k===0){ echo 'active';} ?>">
-                             <div class="boxs">
-                                <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt=""/></div>
-                                <h3 class="col-titles">&nbsp;</h3>
-                                <p class="txt">&nbsp;</p>
-                            </div>
-                            <div class="boxs">
-
-                                <h3 class="col-titles"><?php echo $v['title']; ?></h3>
-                                <p class="txt"><?php echo $v['description']; ?></p>
-
-                            </div>
-                        </div>
-                    <?php endforeach; endif; ?>
-
+                        <?php endforeach; endif; ?>
                     </div>
-                </div>
-                <!-- /.default-carousel -->
+                    
+                    <div id="offeringSlider" class="visible-xs carousel default-carousel offering-carousel slide js-slider" data-ride="carousel" data-interval=false>
+                             <ol class="carousel-indicators">
+                              <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
+                                <li data-target="#offeringSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
+                                <?php endforeach; endif; ?>
+                            </ol>
+                        <div class="carousel-inner" role="listbox">
 
-                <div class="row row-center">
-                    <a href="http://crowdsourcing.topcoder.com/piqued_by_crowdsourcing" target="_blank" class="btn-blue btn-explore-products"><?php echo $fields['sec6_button_label']; ?></a>
+                            <?php if ( $fields['sec6_products'] ) : foreach( $fields['sec6_products'] as $k=>$v ) : ?>
+                                <div class="item col col-talent  <?php if($k===0){ echo 'active';} ?>">
+                                 <div class="boxs">
+                                    <div class="icons no-bg"><img src="<?php echo $v['icon']; ?>" alt=""/></div>
+                                </div>
+                                <div class="boxs">
+
+                                    <h3 class="col-titles"><?php echo $v['title']; ?></h3>
+                                    <p class="txt"><?php echo $v['description']; ?></p>
+
+                                </div>
+                            </div>
+                            <?php endforeach; endif; ?>
+
+                        </div>
+                    </div>
+                    <!-- /.default-carousel -->
+
+                    <div class="row row-center">
+                        <a href="http://crowdsourcing.topcoder.com/piqued_by_crowdsourcing" target="_blank" class="btn-blue btn-explore-products"><?php echo $fields['sec6_button_label']; ?></a>
+                    </div>
+                    <!-- end .row -->
                 </div>
-                <!-- end .row -->
             </div>
-        </div>
-    </section>
-    <!-- end .section-our-products -->
-<?php endif; ?>
+        </section>
+        <!-- end .section-our-products -->
+        <?php endif; ?>
 
-<section id="home-section-7" class="section section-quotes widget">
+<section id="home-section-7" class="section section-quotes">
     <?php 
     $section_ctr++;
     $testimonial_category  = $fields['testimonial_category'];
@@ -262,7 +247,7 @@
 <!-- end .section-quotes -->
 
 <?php if ($fields['sec8_title']!=''): $section_ctr++; ?>
-    <section id="home-section-8" class="section section-clients widget">
+    <section id="home-section-8" class="section section-clients">
         <div class="container">
             <div class="valign-middle">
                 <h2 class="titles"><?php echo $fields['sec8_title']; ?></h2>
@@ -281,7 +266,7 @@
             <?php endif; ?>
 
             <?php $section_ctr++; ?>
-            <section id="home-section-9" class="section section-contact widget norm-widget">
+            <section id="home-section-9" class="section section-contact">
                 <div class="container">
                     <div class="valign-middle">
                        <div class="con-wrap">
@@ -294,7 +279,7 @@
             <!-- end .section-contact -->
 
             <?php $section_ctr++; ?>
-            <section class="section section-footer widget norm-widget">
+            <section class="section section-footer">
                 <div class="container">
                     <div class="valign-middle">
 
@@ -304,18 +289,7 @@
                 </div>
             </section>
             <!-- end .section-footer -->
-        </div>
-        <!-- end .main-container -->
     </div>
     <!-- end .wrapper -->
     
-    <nav id="navbar-dots" class="navbar-dots">
-        <ul class="nav">
-            <?php for($i=1; $i<=$section_ctr; $i++): ?>
-                <li class="<?php echo $i==1 ? 'active': ''; ?>"><a href="javascript:;"><span class="sr-only"><?php echo $i; ?></span></a></li>
-            <?php endfor; ?>
-        </ul>
-    </nav>
-    <!-- / .navbar-dots -->
-
     <?php get_footer(); ?>

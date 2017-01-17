@@ -5083,33 +5083,6 @@ The `sprites` mixin generates identical output to the CSS template
     line-height: 24px;
     margin-top: 15px;
   }
-  .navbar-dots {
-    height: auto;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    z-index: 988;
-  }
-  .navbar-dots li {
-    margin-bottom: 9px;
-  }
-  .navbar-dots li:last-child {
-    margin-bottom: 0;
-  }
-  .navbar-dots li a,
-  .navbar-dots li a:focus {
-    background: transparent;
-    border: 1px solid #dbdadb;
-    border-radius: 50%;
-    display: block;
-    height: 7px;
-    padding: 0;
-    width: 7px;
-  }
-  .navbar-dots li.active a {
-    background: #dbdadb;
-  }
   .go-to-next {
     bottom: 10px;
     width: 40px;
@@ -6362,6 +6335,78 @@ The `sprites` mixin generates identical output to the CSS template
   .blog .blog-list-item-content h2:after {
     display: none;
   }
+  /* Landing Page */
+  .landing-page .section-top-banner .top-banner {
+    height: auto;
+  }
+  .landing-page .section-top-banner .top-banner h2.titles {
+    text-align: center;
+    width: 90%;
+  }
+  .landing-page .section-top-banner .top-banner .row {
+    text-align: center;
+  }
+  .landing-page .section-crowdsourcing .client-carousel {
+    min-height: 300px;
+  }
+  .landing-page .section-crowdsourcing .col:first-child .boxs,
+  .landing-page .section-crowdsourcing .col:last-child .boxs {
+    margin: 0 30px;
+  }
+  .landing-page .section-crowdsourcing .row-bottom {
+    margin: 97px 0 0;
+  }
+  .landing-page .section-crowdsourcing .row-bottom h2.titles-blue,
+  .landing-page .section-crowdsourcing .row-bottom .txt {
+    float: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .landing-page .section-crowdsourcing .row-bottom .btn-get-the-study {
+    margin: 20px auto 0;
+    position: relative;
+    right: auto;
+  }
+  .landing-page .section-community,
+  .landing-page .section-marketplace {
+    height: auto;
+    width: 100%;
+  }
+  .landing-page .section-community .info-main,
+  .landing-page .section-marketplace .info-main {
+    padding: 40px 0;
+  }
+  .landing-page .section-community .info-main h3.titles,
+  .landing-page .section-community .info-main .txt,
+  .landing-page .section-marketplace .info-main h3.titles,
+  .landing-page .section-marketplace .info-main .txt {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  .landing-page .section-marketplace {
+    margin-top: 3px;
+  }
+  .landing-page .section-quotes .carousel-inner .item .txt {
+    font-size: 24px;
+  }
+  .landing-page .section-quotes .head-box .carousel-indicators {
+    top: -25px;
+  }
+  .landing-page .section-quotes .head-box .carousel-indicators li {
+    height: 48px;
+    margin: 0 6px;
+    width: 48px;
+  }
+  .landing-page .section-quotes .head-box .carousel-indicators li img {
+    height: 100%;
+    width: 100%;
+  }
+  .landing-page .section-quotes .head-box .carousel-indicators li .cover {
+    height: 48px;
+    width: 48px;
+  }
 }
 
 /* Mobile Landscape */
@@ -6379,5 +6424,3 @@ The `sprites` mixin generates identical output to the CSS template
     margin: 0 10px;
   }
 }
-
-/*# sourceMappingURL=mobile.css.map */

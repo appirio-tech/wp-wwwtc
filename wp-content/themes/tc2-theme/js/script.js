@@ -61,34 +61,6 @@ jQuery(document).ready(function($){
     $('.multi-item-carousel .item').each(function(){
       $(this).children(':first-child').addClass('panel-active');
     });
-
-    // Landing page: Scroll to specific section
-    $('.navbar-dots a').click(function(e){
-        var $this = $(this),
-            target = parseInt($this.text()) - 1,
-            current = $('section.section:not(".active")').last().index() + 1;
-        
-        // set active state
-        $this.parent().addClass('active');
-        $this.parent().siblings().removeClass('active');
-        
-        if ( current<target) {
-            for( var i=(current+1); i<=target; i++) {
-                autoScrollWidgetLandingPage("down");
-            }    
-        } else if ( current>target) {
-            for( var i=current; i>target; i--) {
-                autoScrollWidgetLandingPage("up");
-            }
-        }
-		//landingPage MoveUp Link Init
-      landingPageMoveUpLinkInit();
-    });
-    
-    //
-    $('.go-to-next').click(function(){
-        scrollWidgetLandingPage("down");
-    });
     
   
   //click on menu icon
@@ -104,53 +76,6 @@ jQuery(document).ready(function($){
     $(".right-aside").removeClass("moving");
     $(".wrapper").removeClass("moving");
   })
-  
-  //scroll up/down the mouse in Landing page
-  $(".wrapper.landing-page").on("mousewheel DOMMouseScroll", function (e) {
-    if(!$(".right-aside").hasClass("moving"))
-    {
-      var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
-                  (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1));            // firefox
-      
-      if (delta > 0){
-        // scroll up
-        scrollWidgetLandingPage("up");
-      }
-      else if (delta < 0){
-        // scroll down
-        scrollWidgetLandingPage("down");
-      }
-    }
-  });
-  
-  //click key up/down in Landing page
-  $(document).keyup(function (e) {
-    if($(".landing-page").length>0 && !$(".right-aside").hasClass("moving"))
-    {
-      var keycode = e.which;
- 
-      if (keycode === 38){
-        // scroll up
-        scrollWidgetLandingPage("up");
-      }
-      else if (keycode === 40){
-        // scroll down
-        scrollWidgetLandingPage("down");
-      }
-    }
-  });
-  
-  //swipe on Landing page
-  $(".wrapper.landing-page").swipe({
-    swipeUp: function() { 
-      // scroll down
-      scrollWidgetLandingPage("down");
-    },
-    swipeDown: function() { 
-      // scroll up
-      scrollWidgetLandingPage("up");
-    }
-  });
   
   /*click on Get started with crowdsourcing button in Landing page
     click on Submit button in About Topcoder Contact page*/
@@ -331,100 +256,6 @@ jQuery(document).ready(function($){
     initMoveup($('.wrapper'));
 
   })
-
-  
-  //scroll the Landing page
-  var scrolling = false;
-  function scrollWidgetLandingPage(direction){
-    if(scrolling)
-      return;//do nothing when scrolling is working
-  
-    if($(".landing-page").length>0)
-    {
-      var page_sections = $(".landing-page .widget");
-      var current_index = $(".landing-page .widget").length - $(".landing-page .widget.active").length,
-          current_active = 0;
-      
-      if(direction === "up")
-      {
-        if(current_index > 0)
-        {
-          scrolling = true;
-          page_sections.eq(current_index - 1).addClass("active");
-          setTimeout(function(){
-            scrolling = false;
-          },900);
-            current_active = current_index - 1;
-            $('#navbar-dots li').removeClass('active');
-            $('#navbar-dots li').eq(current_active).addClass('active');
-        }
-      }
-      
-      if(direction === "down")
-      {        
-        if(current_index < page_sections.length-1)
-        {
-          scrolling = true;
-          page_sections.eq(current_index).removeClass("active");
-          setTimeout(function(){
-            scrolling = false;
-          },900);
-          
-            current_active = current_index + 1;
-            $('#navbar-dots li').removeClass('active');
-            $('#navbar-dots li').eq(current_active).addClass('active');
-        }
-      }
-
-
-    //landingPage MoveUp Link Init
-      landingPageMoveUpLinkInit();
-    }
-  }
-
-  function landingPageMoveUpLinkInit(){
-     if($('.landing-page').length>0){
-    /* landing page moveup button function*/
-      if($('.landing-page .main-container section:first').hasClass('active')){
-        $('.move-up').removeClass('affixed');
-        
-        hideStickyBanner();
-      }else{
-        $('.move-up').addClass('affixed');
-        $('.move-up').off().on('click',function(){
-           var current = $('section.section:not(".active")').last().index() + 1;
-           for( var i=current; i>0; i--) {
-                autoScrollWidgetLandingPage("up");
-            }
-            $('.move-up').removeClass('affixed');
-        });
-        
-        showStickyBanner();
-      }
-     }
-  }
-    
-    
-    //scroll the Landing page
-    function autoScrollWidgetLandingPage(direction){
-        
-        if($(".landing-page").length>0) {
-            var page_sections = $(".landing-page .widget");
-            var current_index = $(".landing-page .widget").length - $(".landing-page .widget.active").length;
-            
-            if(direction === "up") {
-                if(current_index > 0) {
-                    page_sections.eq(current_index - 1).addClass("active");
-                }
-            }
-            
-            if(direction === "down") {        
-                if(current_index < page_sections.length-1) {
-                    page_sections.eq(current_index).removeClass("active");
-                }
-            }
-        }
-    }
   
   //general validate form function
   function validateForm(formElement) {
@@ -658,21 +489,18 @@ jQuery(document).ready(function($){
     $('.js-nav-tab').on('click',function(e){
       e.stopPropagation();
     })
-
+    
     //close drop-down on cliking overlay
     $('.overlay').on('click',function(){
       $('.nav-open').removeClass('nav-open');
       $('.js-nav-tab').removeClass('open');
     })
-
+    
     // move up
     $('.move-up').on('click',function(){
      $('body > .wrapper').animate({ scrollTop: 0}, 500, 'swing');
     })
-
-
-    //landingPageMoveUpLink Init
-    landingPageMoveUpLinkInit();
+    
     
     /**
      * Sticky Banner 

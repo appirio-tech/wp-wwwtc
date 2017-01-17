@@ -5111,36 +5111,7 @@
       margin-top: 15px;
     }
   }
-  // Navbar Dots
-  .navbar-dots {
-    height: auto;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    z-index: 988;
-    li {
-      margin-bottom: 9px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-      a,
-      a:focus {
-        background: transparent;
-        border: 1px solid #dbdadb;
-        border-radius: 50%;
-        display: block;
-        height: 7px;
-        padding: 0;
-        width: 7px;
-      }
-      &.active {
-        a {
-          background: #dbdadb;
-        }
-      }
-    }
-  }
+  
   .go-to-next {
     bottom: 10px;
     width: 40px;
@@ -6677,6 +6648,106 @@
         }
     }
     
+    /* Landing Page */
+    .landing-page {
+        .section-top-banner {
+            .top-banner {
+                height: auto;
+                
+                h2.titles {
+                    text-align: center;
+                    width: 90%;
+                }
+                
+                .row {
+                    text-align: center;
+                }
+            }
+        }
+        
+        .section-crowdsourcing {
+            .client-carousel {
+                min-height: 300px;
+            }
+            .col:first-child, 
+            .col:last-child{
+                .boxs {
+                    margin: 0 30px;
+                }
+            }
+            
+            .row-bottom {
+                margin: 97px 0 0;
+                
+                h2.titles-blue,
+                .txt {
+                    float: none;
+                    margin: 0;
+                    text-align: center;
+                    width: 100%;
+                }
+                
+                .btn-get-the-study {
+                    margin: 20px auto 0;
+                    position: relative;
+                    right: auto;
+                }
+            }
+        }
+        
+        .section-community, 
+        .section-marketplace {
+            height: auto;
+            width: 100%;
+            
+            .info-main {
+                padding: 40px 0;
+                
+                h3.titles, 
+                .txt {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 90%;
+                }
+            }
+        }
+        
+        .section-marketplace {
+            margin-top: 3px;
+        }
+        
+        .section-quotes {
+            .carousel-inner {
+                .item {
+                    .txt {
+                        font-size: 24px;
+                    }
+                }
+            }
+            
+            .head-box {
+                .carousel-indicators {
+                    top: -25px;
+                        
+                    li {
+                        height: 48px;
+                        margin: 0 6px;
+                        width: 48px;
+                        
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                        
+                        .cover {
+                            height: 48px;
+                            width: 48px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Mobile Landscape */

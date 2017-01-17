@@ -106,17 +106,6 @@ The `sprites` mixin generates identical output to the CSS template
   .header .right-area li.menu-item-has-children a {
     background-position: 97% 50%;
   }
-  /* .navbar-dots in home page */
-  .navbar-dots {
-    right: 20px;
-  }
-  .navbar-dots li {
-    margin-bottom: 9px;
-  }
-  .navbar-dots li a, .navbar-dots li a:focus {
-    height: 7px;
-    width: 7px;
-  }
   /* .right-aside  */
   .right-aside .nav-menu ul, .right-aside .nav-menu-small ul {
     padding-left: 29px;
@@ -1491,6 +1480,21 @@ The `sprites` mixin generates identical output to the CSS template
   .blog .contents, .single .contents, .archive .contents, .search .contents, .error404 .contents {
     width: 90%;
   }
+  /* Landing Page */
+  .landing-page .section-top-banner h2.titles {
+    width: 95%;
+  }
+  .landing-page .section-crowdsourcing .col:first-child .boxs,
+  .landing-page .section-crowdsourcing .col:last-child .boxs {
+    margin: 0 30px;
+  }
+  .landing-page .section-crowdsourcing .row-bottom .btn-get-the-study {
+    right: 6%;
+  }
+  .landing-page .section-our-products .row-products .col .icons img {
+    height: auto;
+    width: 64px;
+  }
 }
 
 /* to fix orientation landscape layout */
@@ -1563,6 +1567,15 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+  .landing-page .section-community {
+    height: 600px;
+    width: 100%;
+  }
+  .landing-page .section-marketplace {
+    height: 600px;
+    margin-top: 3px;
+    width: 100%;
+  }
   .single .sidebar .sidebar-ad-portrait {
     display: none;
   }
@@ -1619,5 +1632,3 @@ The `sprites` mixin generates identical output to the CSS template
     background-size: 100% auto;
   }
 }
-
-/*# sourceMappingURL=tablet.css.map */

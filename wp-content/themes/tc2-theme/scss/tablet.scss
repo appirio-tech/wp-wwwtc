@@ -90,20 +90,6 @@
         }
     }
     
-    /* .navbar-dots in home page */
-    .navbar-dots {
-        right: 20px;
-        
-        li {
-            margin-bottom: 9px;
-            
-            a, a:focus {
-                height: 7px;
-                width: 7px;
-            }
-        }
-    }
-    
     /* .right-aside  */
     .right-aside {
         
@@ -2112,11 +2098,48 @@
             width: 90%;
         }   
     }
+    
+    
+    /* Landing Page */
+    .landing-page {
+        .section-top-banner {
+            h2.titles {
+                width: 95%;
+            }    
+        }
+        
+        .section-crowdsourcing {
+            .col:first-child, 
+            .col:last-child{
+                .boxs {
+                    margin: 0 30px;
+                }
+            }
+            
+            .row-bottom {
+                .btn-get-the-study {
+                    right: 6%;
+                }
+            }
+        }
+        
+        .section-our-products {
+            .row-products {
+                .col {
+                    .icons {
+                        img {
+                            height: auto;
+                            width: 64px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* to fix orientation landscape layout */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
     /* .section-crowdsourcing */
     .section-crowdsourcing {
         
@@ -2240,6 +2263,19 @@
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    .landing-page {
+        .section-community {
+            height: 600px;
+            width: 100%;
+        }
+        
+        .section-marketplace {
+            height: 600px;
+            margin-top: 3px;
+            width: 100%;
+        }
+    }
+    
     .single {
         .sidebar {
             .sidebar-ad-portrait {
