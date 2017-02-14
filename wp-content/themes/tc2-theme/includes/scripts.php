@@ -2,7 +2,7 @@
 // Add theme CSS files
 function load_site_styles() {
 	global $wp_styles;
-    $v = '20161201';
+    $v = '20170210';
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', false, false, 'all');
     wp_enqueue_style('bootstrap-theme', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', false, false, 'all');
     wp_enqueue_style('coverflow', get_template_directory_uri() . '/bower_components/coverflow/dist/coverflow.css', false, false, 'all');
@@ -14,7 +14,7 @@ function load_site_styles() {
 
 // Add theme JS files
 function load_site_scripts() {
-     $v = '20161201';
+     $v = '20170210';
 	//wp_enqueue_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array('jquery'), false, true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), false, true);
     wp_enqueue_script('jquery-touchswipe', get_template_directory_uri() . '/bower_components/jquery-touchswipe/jquery.touchSwipe.min.js', array('jquery'), false, true);

@@ -36,11 +36,17 @@
                 </div>
             <?php endwhile; 
                 
+                global $wp;
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+                $current_url = str_replace('wwwtc.wpengine.com', 'www.topcoder.com', $current_url);
+                $new_base    = explode('/page/', $current_url);
+                
                 // Previous/next page navigation.
                 the_posts_pagination( array(
                     'prev_text'          => __( '&laquo;', 'topcoder' ),
                     'next_text'          => __( '&raquo;', 'topcoder' ),
                     'before_page_number' => '',
+                    'base'               => $new_base[0] . '/page/%#%/'
                 ) );
                 
                 endif; 

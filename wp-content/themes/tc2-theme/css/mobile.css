@@ -888,24 +888,26 @@ The `sprites` mixin generates identical output to the CSS template
     margin: 0 30px;
   }
   .section-crowdsourcing .row-bottom .titles-blue {
-    font-family: "proxima-nova", sans-serif;
-    font-size: 16px;
-    color: #1a85ff;
+    font-size: 27px;
+    font-weight: normal;
     line-height: 1.4;
-    padding-top: 10px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
   }
   .section-crowdsourcing .row-bottom .txt {
-    font-size: 10px;
-    color: #343435;
-    font-weight: 300;
-    line-height: 1.2;
-    padding: 5px 0 23px 0;
+    font-size: 16px;
+    line-height: normal;
+    margin: 26px auto 0 !important;
+    padding-bottom: 0;
+    text-align: center;
   }
   .section-crowdsourcing .row-bottom .btn-get-the-study {
     width: 150px;
     height: 35px;
     line-height: 35px;
     padding: 0;
+    margin-top: 47px !important;
   }
   /* .section-community */
   .section-community {
@@ -3769,6 +3771,7 @@ The `sprites` mixin generates identical output to the CSS template
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 120px;
   }
   .footer .item-list .item {
     text-align: left;
@@ -3779,11 +3782,11 @@ The `sprites` mixin generates identical output to the CSS template
     flex: 0 49.5%;
   }
   .footer .item-list .item .col {
-    max-width: 130px;
     text-align: left;
     margin-right: auto;
     margin-left: auto;
     display: inline-block;
+    max-width: none;
   }
   .footer .item-list .item .col .titles {
     font-weight: 600;
@@ -3808,12 +3811,9 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .footer .item-list .item:nth-child(3) {
     order: 1;
-    text-align: right;
   }
   .footer .item-list .item:nth-child(4) {
     order: 0;
-    text-align: right;
-    text-align: right;
   }
   /* .modal-default */
   .modal.modal-default {
