@@ -463,8 +463,11 @@ a:hover {
 
 .landing-page .section-crowdsourcing .row-bottom h2.titles-blue, .landing-page .section-crowdsourcing .row-bottom .txt {
   color: #fff;
+  font-size: 30px;
+  line-height: 40px;
+  margin: 0 0 0 15%;
+  padding: 0;
   text-align: left;
-  margin-left: 15%;
   width: 60%;
 }
 
@@ -497,22 +500,22 @@ a:hover {
 }
 
 .landing-page .section-community .info-main .titles {
-  font-size: 27px;
+  font-size: 30px;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 40px;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  width: 490px;
+  width: 500px;
 }
 
 .landing-page .section-community .info-main .txt {
-  font-size: 16px;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   margin: 26px auto 0;
   padding-bottom: 0;
   text-align: center;
-  width: 490px;
+  width: 500px;
 }
 
 .landing-page .section-community .info-main .btn-meet-our-community {
@@ -544,22 +547,23 @@ a:hover {
 
 .landing-page .section-get-done .info-main .titles, .landing-page .section-marketplace .info-main .titles {
   color: #fff;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 40px;
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  width: 490px;
+  width: 500px;
 }
 
 .landing-page .section-get-done .info-main .txt, .landing-page .section-marketplace .info-main .txt {
   color: #fff;
-  font-size: 16px;
-  line-height: normal;
+  font-size: 18px;
+  line-height: 24px;
   margin-top: 26px;
   padding: 0;
   text-align: center;
+  width: 500px;
 }
 
 .landing-page .section-get-done .info-main .btn-explore-the-marketplace, .landing-page .section-marketplace .info-main .btn-explore-the-marketplace {
@@ -579,7 +583,7 @@ a:hover {
 }
 
 .landing-page .section-our-products .col {
-  min-height: 350px;
+  min-height: 400px;
 }
 
 .landing-page .section-our-products .titles {
@@ -599,14 +603,14 @@ a:hover {
 }
 
 .landing-page .section-our-products .col-titles {
-  font-size: 33px;
-  line-height: normal;
+  font-size: 30px;
+  line-height: 40px;
   margin: 32px 0 0;
 }
 
 .landing-page .section-our-products .txt {
   font-size: 18px;
-  line-height: normal;
+  line-height: 24px;
 }
 
 .landing-page .section-our-products .txt a {
@@ -1401,8 +1405,8 @@ a:hover {
   margin: 0 auto;
 }
 
-.section-crowdsourcing .titles-blue {
-  padding-bottom: 32px;
+.section-crowdsourcing .titles {
+  padding-bottom: 60px;
 }
 
 .section-crowdsourcing .icon-talent {

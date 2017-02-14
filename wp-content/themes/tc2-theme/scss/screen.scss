@@ -410,8 +410,11 @@ a {
             
             h2.titles-blue, .txt {
                 color: #fff;
+                font-size: 30px;
+                line-height: 40px;
+                margin: 0 0 0 15%;
+                padding: 0;
                 text-align: left;
-                margin-left: 15%;
                 width: 60%;
             }
             
@@ -446,22 +449,22 @@ a {
             padding: 0;
             
             .titles {
-                font-size: 27px;
+                font-size: 30px;
                 font-weight: normal;
-                line-height: 1.4;
+                line-height: 40px;
                 margin: 0 auto;
                 padding: 0;
                 text-align: center;
-                width: 490px;
+                width: 500px;
             }
             
             .txt {
-                font-size: 16px;
-                line-height: normal;
+                font-size: 18px;
+                line-height: 24px;
                 margin: 26px auto 0;
                 padding-bottom: 0;
                 text-align: center;
-                width: 490px;
+                width: 500px;
             }
             
             .btn-meet-our-community {
@@ -494,22 +497,23 @@ a {
             
             .titles {
                 color: #fff;
-                font-size: 27px;
+                font-size: 30px;
                 font-weight: normal;
-                line-height: 1.4;
+                line-height: 40px;
                 margin: 0 auto;
                 padding: 0;
                 text-align: center;
-                width: 490px;
+                width: 500px;
             }
             
             .txt {
                 color: #fff;
-                font-size: 16px;
-                line-height: normal;
+                font-size: 18px;
+                line-height: 24px;
                 margin-top: 26px;
                 padding: 0;
                 text-align: center;
+                width: 500px;
             }
             
             .btn-explore-the-marketplace {
@@ -531,7 +535,7 @@ a {
         padding: 100px 0;
         
         .col {
-            min-height: 350px;
+            min-height: 400px;
         }
         
         .titles {
@@ -551,14 +555,14 @@ a {
         }
         
         .col-titles {
-            font-size: 33px;
-            line-height: normal;
+            font-size: 30px;
+            line-height: 40px;
             margin: 32px 0 0;
         }
         
         .txt {
             font-size: 18px;
-            line-height: normal;
+            line-height: 24px;
             
             a {
                 color: #0A71E6;
@@ -1345,8 +1349,8 @@ a {
 			height: 128px;
 			margin: 0 auto;
 		}
-		.titles-blue {
-			padding-bottom: 32px;
+		.titles {
+			padding-bottom: 60px;
 		}
 		.icon-talent {
 			background-position: -128px -192px;
@@ -1386,6 +1390,7 @@ a {
 			color: #333e48;
 			line-height: 25px;
 		}
+        
 		/* .section-crowdsourcing .row-bottom */
 		.row-bottom {
 			text-align: center;
