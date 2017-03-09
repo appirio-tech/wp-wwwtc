@@ -19,6 +19,8 @@
     "jquery-touchswipe": "^1.6.18",
     "bootstrap": "^3.3.6",
     "coverflow": "https://github.com/coverflowjs/coverflow.git#^3.0.2",
-    "ouibounce": "https://github.com/carlsednaoui/ouibounce.git#^0.0.12"
+    "ouibounce": "https://github.com/carlsednaoui/ouibounce.git#^0.0.12",
+    "countUp.js": "^1.8.1",
+    "masonry": "^4.1.1"
   }
 }

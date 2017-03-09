@@ -11,3 +11,4 @@ include_once 'includes/post-type-product-showcase.php';	// Product Showcase Cust
 include_once 'includes/post-type-testimonials.php';	    // Testimonials Custom Post Type
 include_once 'includes/post-type-products.php';	        // Products Custom Post Type
 include_once 'includes/post-type-sticky-banner.php';	// Sticky Banner Custom Post Type
+include_once 'includes/post-type-case-studies.php';	    // Case Studies Custom Post Type

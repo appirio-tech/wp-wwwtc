@@ -6046,6 +6046,700 @@ $cOrange: #f59121;
         }
     }
 }
+
+
+/* Case Studies */
+.case-study-content, .single-case_studies {
+    .hero-carousel {
+        .carousel-inner {
+            .item {
+                height: 500px !important;
+                
+                .carousel-caption {
+                    left: 5%;
+                    max-width: none;
+                    right: 5%;
+                    
+                    h1 {
+                        font-size: 75px;
+                        font-weight: 300;
+                        line-height: 80px;
+                        text-transform: capitalize;
+                    }
+                    p {
+                        font-size: 45px;
+                        font-weight: 300;
+                        line-height: 80px;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .current-category {
+        display: none;
+    }
+    
+    .categories {
+        display: block;
+        margin: 40px 10px 50px;
+        
+        li {
+            display: inline-block;
+            margin: 0 6px 10px 0;
+            
+            &.back-to-case {
+                margin: 0;
+            }
+            
+            a {
+                background: #dcdce0;
+                border-radius: 16px;
+                color: #37373b;
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                height: 32px;
+                line-height: 32px;
+                padding: 0 18px;
+                transition: background 0.3s ease-in-out 0.1s;
+                
+                .icon-back {
+                    background: url(../i/icon-back-sprite.png) 0 0 no-repeat;
+                    display: inline;
+                    height: 32px;
+                    margin-right: 6px;
+                    padding: 7px 5px;
+                    width: 10px;
+                }
+                
+                &:hover {
+                    background: #0a71e6;
+                    color: #fff;
+                    text-decoration: none;
+                    
+                    .icon-back {
+                        background-position: 0 100%;   
+                    }
+                }
+            }
+            
+            &.active {
+                a {
+                    background: #0a71e6;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .contents {
+        margin: 0 auto;
+        width: 90%;
+    }
+    
+    .case-study-teaser {
+        border-bottom: 3px solid #ededf2;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 50px;
+        margin-bottom: 90px;
+        padding-bottom: 90px;
+    }
+    
+    .case-study-quote {
+        font-size: 30px;
+        line-height: 40px;
+        font-style: italic;
+        margin-bottom: 60px;
+        position: relative;
+        
+        &:before {
+            background: url(../i/quote-start.png);
+            content: '';
+            height: 58px;
+            left: -20px;
+            position: absolute;
+            top: -25px;
+            width: 75px;
+            z-index: -1;
+        }
+        
+        p { 
+            &:after {
+                background: url(../i/quote-end.png);
+                bottom: 0;
+                content: '';
+                height: 58px;
+                position: absolute;
+                width: 75px;
+                z-index: -1;
+            }
+        }
+    }
+    
+    .case-study-top-text, 
+    .case-study-left-text,
+    .case-study-right-text {
+        font-size: 18px;
+        line-height: 24px;
+        padding-bottom: 6px;
+        
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 40px;
+            margin: 0;
+        }
+        
+        p {
+            margin-bottom: 24px;
+        }
+    }
+    
+    .case-studies-metrics {
+        li {
+            margin-bottom: 40px;
+        }
+        
+        .key {
+            font-size: 30px;
+            line-height: 40px;
+            margin-bottom: 15px;
+        }
+        .value {
+            font-size: 70px;
+            font-weight: 300;
+            line-height: 40px;
+        }
+    }
+    
+    .case-studies-images {
+        margin: 70px 0 60px;
+        
+        .carousel-inner {
+            .item {
+                height: auto !important;
+                
+                img {
+                    margin: 0 auto;
+                }
+            }
+        }
+        
+        .carousel-control {
+            height: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            
+            &.left {
+                background: url(../i/arrow-left-blue.png) no-repeat;
+                left: 0;
+            }
+            &.right {
+                background: url(../i/arrow-right-blue.png) no-repeat;
+                right: 0;
+            }
+        }
+    }
+    
+    .case-algorithms-analytics {
+        .case-study-quote,
+        .case-studies-metrics .value {
+            color: #fb7d21;
+        }
+    }
+    .case-app-design-development {
+        .case-study-quote,
+        .case-studies-metrics .value  {
+            color: #0a71e6;
+        }
+    }
+    .case-app-modernization {
+        .case-study-quote,
+        .case-studies-metrics .value  {
+            color: #60c700;
+        }
+    }
+    .case-community-segments {
+        .case-study-quote,
+        .case-studies-metrics .value  {
+            color: #25ade9;
+        }
+    }
+    .case-innovation-programs {
+        .case-study-quote,
+        .case-studies-metrics .value  {
+            color: #f22e24;
+        }
+    }
+    .case-staff-augmentation {
+        .case-study-quote,
+        .case-studies-metrics .value  {
+            color: #9050a3;
+        }
+    }
+    
+    .case-studies-post {
+        ul {
+            padding: 0;
+            
+            .grid-sizer {
+                margin: 0;
+                width: calc(33.3% - 20px);
+            }
+            
+            li {
+                background: #fff;
+                box-shadow: 0 1px 7px rgba(0,0,0,.15);
+                margin: 10px 0    ;
+                width: calc(33.3% - 20px);
+                
+                a {
+                    color: #37373b;
+                    display: block;
+                    padding: 20px;
+                    position: relative;
+                    
+                    .case-details {
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out 0.1s;
+                    }
+                    
+                    &:after {
+                        background: rgba(55, 55, 59, 0.9);
+                        content: '';
+                        height: 100%;
+                        left: 0;
+                        opacity: 0;
+                        position: absolute;
+                        transition: opacity 0.3s ease-in-out 0.1s;
+                        top: 0;
+                        width: 100%;
+                        z-index: 99;
+                    }
+                    
+                    &:hover {
+                        text-decoration: none;
+                        
+                        &:after {
+                            opacity: 1;
+                        }
+                        
+                        .case-details {
+                            color: #fff;
+                            font-size: 30px;
+                            height: auto;
+                            left: 0;
+                            opacity: 1;
+                            position: absolute;
+                            text-align: center;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 100%;
+                            z-index: 100;
+                        }
+                    }
+                }
+                
+                .case-img {
+                    display: block;
+                    margin: -20px -20px 0;
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                
+                .case-title {
+                    display: block;
+                    font-size: 30px;
+                    line-height: 40px;
+                    margin-top: 20px;
+                }
+                
+                .case-subtitle {
+                    display: block;
+                    font-size: 20px;
+                    line-height: 40px;
+                }
+                
+                .case-term {
+                    border: 1px solid #dcdce0;
+                    border-radius: 11px;
+                    color: #a3a3ad;
+                    display: inline-block;
+                    font-size: 10px;
+                    height: 22px;
+                    line-height: 22px;
+                    margin-top: 15px;
+                    padding: 0 9px;
+                }
+                
+                &.ad {
+                    color: #fff;
+                    display: none;
+                    position: relative;
+                    text-align: center;
+                    
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                    
+                    .ad-content {
+                        left: 50%;
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 90%;
+                        
+                        h2 {
+                            font-size: 30px;
+                            font-weight: 600;
+                            line-height: 40px;
+                        }
+                        
+                        p {
+                            font-size: 30px;
+                            line-height: 40px;
+                        }
+                        
+                        .button {
+                            margin-top: 30px;
+                            
+                            a {
+                                background: #fff;
+                                border-radius: 25px;
+                                color: #0a71e6;
+                                display: inline-block;
+                                font-size: 20px;
+                                height: 50px;
+                                line-height: 50px;
+                                padding: 0 30px;
+                                transition: all 0.3s ease-in-out 0.1s;
+                                
+                                &:hover {
+                                    background: #0a71e6;
+                                    color: #fff;
+                                    
+                                    &:after {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+.page-template-template-branding {
+    &.admin-bar .hero-carousel .carousel-inner .item,
+    .hero-carousel .carousel-inner .item {
+        height: 500px;
+    }
+    
+    .brand-section {
+        margin-top: 90px;
+        h2 {
+            font-size: 50px;
+            line-height: 60px;
+            margin-bottom: 55px;
+            text-align: center;
+        }
+    }
+    
+    
+    // Navigation
+    .nav-branding {
+        li {
+            a {
+                display: table-cell;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+        }
+        
+        &.affixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    }
+    
+    // Logo section
+    .brand-section-logo {
+        .item {
+            margin: 15px 0;
+            padding: 55px 25px;
+            position: relative;
+            
+            .img {
+                text-align: center;
+                
+                img {
+                    max-width: 100%;
+                }
+            }
+            
+            h3 {
+                font-size: 30px;
+                line-height: 40px;
+                margin-top: 85px;
+            }
+            
+            p {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            
+            .hover {
+                background: rgba(255, 255, 255, 0.9);
+                height: 100%;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                transition: all 0.3s ease-in-out 0.1s;
+                width: 100%;
+                
+                a {
+                    left: 50%;
+                    position: relative;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .note {
+            margin-top: 40px;
+        }
+    }
+    
+    
+    // Logo Usage section
+    .brand-section-logo-usage {
+        .note {
+            text-transform: none;
+        }
+        
+        .img {
+            margin-top: 45px;
+            position: relative;
+            
+            img {
+                height: auto;
+                width: 100%;
+                
+                &.hover {
+                    height: 100%;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    transition: all 0.3s ease-in-out 0.1s;
+                    width: 100%;
+                }
+            }
+            
+            &:hover {
+                img.hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    
+    // Icons section
+    .brand-section-icons {
+        .item {
+            margin: 15px 0;
+            min-height: 407px;
+            padding: 55px 25px;
+            position: relative;
+            
+            .img {
+                text-align: center;
+                
+                img {
+                    max-width: 100%;
+                }
+            }
+            
+            h3 {
+                font-size: 30px;
+                line-height: 40px;
+                margin-top: 85px;
+            }
+            
+            p {
+                font-size: 18px;
+                line-height: 24px;
+            }
+            
+            .hover {
+                background: rgba(255, 255, 255, 0.9);
+                height: 100%;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                transition: all 0.3s ease-in-out 0.1s;
+                width: 100%;
+                
+                a {
+                    left: 50%;
+                    position: relative;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .note {
+            margin-top: 40px;
+        }
+    }
+    
+    
+    // Colors Section
+    .brand-section-color {
+        h2 {
+            margin-bottom: 0;
+        }
+        
+        h3 {
+            font-size: 40px;
+            line-height: 50px;
+            margin-bottom: 35px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        h4 {
+            font-size: 30px;
+            line-height: 40px;
+        }
+        
+        .color-box {
+            border-radius: 100%;
+            display: inline;
+            float: left;
+            height: 150px;
+            width: 150px;
+        }
+        
+        .item {
+            display: inline;
+            float: left;
+            margin: 40px 0 0 18px;
+            width: auto;
+        }
+        
+        .col-md-4 {
+            margin-bottom: 20px;
+        }
+    }
+    
+    
+    // Classes
+    .note {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .txtDark {
+        color: #37373b;
+    }
+    .txtLight {
+        color: #fff;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .ad-desktop {
+        display: none;
+    }
+    .ad-tablet {
+        display: none;
+    }
+    .ad-mobile {
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    .case-study-content, .single-case_studies, .page-template-template-branding {
+        .container {
+            width: 750px;
+        }
+    }
+    .ad-desktop {
+        display: none;
+    }
+    .ad-tablet {
+        display: block;
+    }
+    .ad-mobile {
+        display: none;
+    }
+}
+@media (min-width: 992px) {
+    .case-study-content, .single-case_studies, .page-template-template-branding {
+        .container {
+            width: 970px;
+        }
+    }
+    .ad-desktop {
+        display: none;
+    }
+    .ad-tablet {
+        display: block;
+    }
+    .ad-mobile {
+        display: none;
+    }
+}
+@media (min-width: 1025px) {
+    .ad-desktop {
+        display: block;
+    }
+    .ad-tablet {
+        display: none;
+    }
+    .ad-mobile {
+        display: none;
+    }
+}
+@media (min-width: 1200px) {
+    .case-study-content, .single-case_studies, .page-template-template-branding { 
+        .container {
+            width: 1170px;
+        }
+    }
+}
+/* End of Case Studies */
+
+
 .has-middle-page-navigation {
     .hero-carousel {
         .carousel-inner {

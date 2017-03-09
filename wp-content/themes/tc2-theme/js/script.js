@@ -254,7 +254,6 @@ jQuery(document).ready(function($){
         hideStickyBanner();
     }    
     initMoveup($('.wrapper'));
-
   })
   
   //general validate form function
@@ -668,7 +667,203 @@ jQuery(document).ready(function($){
     }
     
     
-})
+    // Count Up
+    if ( $('.case-studies-metrics li').length>0 ) {
+        var countup     = new Array(),
+            countplayed = new Array(),
+            allplayed   = false,
+            metrics_top = $('.case-studies-metrics').offset().top;
+        
+        $('.case-studies-metrics li').each(function(i){
+            var $value = $(this).find('.value'),
+                options = {
+                    useEasing : true, 
+                    useGrouping : true, 
+                    separator : ',', 
+                    decimal : '.', 
+                    prefix : $value.data('prefix'), 
+                    suffix : $value.data('suffix') 
+                };
+                
+                if ( $value.data('value')>0 ) {
+                    countup[i] = new CountUp('case-value-'+i, 0, $value.data('value'), 0, 3, options);
+                } else {
+                    $value.html( $value.data('prefix') + $value.data('suffix') );
+                }
+        });
+        
+        
+        $('.case-study-content').scroll(function(){
+            var body_height = $("body").innerHeight();
+            
+            $('.case-studies-metrics li').each(function(i){
+                var $this = $(this);
+                
+                if ( body_height>($this.offset().top + $this.height()) ) {
+                    if( countup[i]!=undefined ) {
+                        countup[i].start();
+                    }
+                }
+                
+            });
+        });
+    }
+    
+    
+    if ( $('.case-studies-post').length>0 ) {
+        
+        
+        var $grid = $('.case-studies-post').masonry({
+            itemSelector: '.case-studies-post ul li.visible',
+            gutter: 20,
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+        });
+        
+        $grid.imagesLoaded().progress( function() {
+            $grid.masonry('layout');
+        });
+        
+        
+        // Lazy load
+        var loading = false;
+        if ( $('#case-page').length>0 ) {
+            $('.case-study-content').on("scroll",function(){
+                if ( $('footer').offset().top<500 && loading==false ) {
+                    loading = true;
+                    $.post(
+                        jsvars.admin_ajax,
+                        {
+                            "page": $('#case-page').val(),
+                            "action": "case_lazy_load",
+                        },
+                        function(data){
+                            
+                            // set loading safe to false
+                            loading = false;
+                            
+                            if (data!='' && data!='0') {
+                                // update pagination
+                                $('#case-page').val( parseInt($('#case-page').val()) + 1 );
+                                
+                                // update list
+                                $('.case-studies-post ul').append(data);
+                            } else {
+                                // remove pagination to prevent future ajax request
+                                $('#case-page').remove();
+                            }
+                            
+                            $grid.masonry('reloadItems');
+                            $grid.masonry('layout');
+                        }
+                    );
+                }
+            });
+        }
+        
+        
+        // Case Filter
+        $('.categories a').click(function(){
+            var $this = $(this);
+            
+            $('.categories li').removeClass('active');
+            $this.parent().addClass('active');
+            
+            $('.case-studies-post li').removeClass('visible');
+            
+            if ( $this.data('catfilter')=='all' ) {
+                $('.case-studies-post li').fadeIn().addClass('visible');
+                $('.case-studies-post li.ad').hide();
+            } else {
+                $('.case-studies-post li').hide();
+                $('.case-studies-post li.'+$this.data('catfilter')).fadeIn().addClass('visible');
+            }
+            
+             var $ad = $('.case-studies-post ul li.ad').detach();
+            
+            if ( $('.case-studies-post ul li:visible').length>0 ) {
+                var eq_insert = $('.case-studies-post ul li:visible').length>1 ? 1 : 0;
+                $ad.insertAfter( $('.case-studies-post ul li.visible:eq('+eq_insert+')') );
+            } else {
+                $('.case-studies-post ul').append( $ad );
+            }
+            
+            $('.case-studies-post ul li.ad').each(function() {
+                if ( $(this).hasClass( $this.data('catfilter')) ) {
+                    $(this).addClass('visible');
+                } else {
+                    $(this).removeClass('visible');
+                }
+            });
+            
+            $grid.masonry('reloadItems');
+            $grid.masonry('layout');
+            
+            // Scroll up the categories if in mobile
+            if ( $('.current-category').is(':visible') ) {
+                $('.categories').slideUp(300);
+            }
+            
+            $('.current-category a').text( $this.text() );
+        });
+        
+        
+        // Slide out categories
+        $('.current-category').click(function(){
+            if ( $('.categories').is(':visible') ) {
+                $('.categories').slideUp(300);
+            } else {
+                $('.categories').slideDown(300);
+                
+                $('.case-study-content').animate({
+                    scrollTop: $('#hero-carousel').height()
+                }, 300);
+            }
+        });
+        
+        // Show category fix when hidden in mobile
+        $(window).on('resize', function(){
+            if( $(window).width()>=768 ){
+                if ( $('.categories').is(':visible')==false ) {
+                    $('.categories').slideDown(300);
+                }
+            } else {
+                if ( $('.categories').is(':visible') ) {
+                    $('.categories').slideUp(300);
+                }
+            }
+        });
+    }
+    
+    
+    // Branding Navigation scroll to section
+    $('.nav-branding a').click(function(){
+        var target = $(this).data('target'),
+            scrollTo = $('#'+target),
+            container = $('.wrapper'),
+            scrollValue = ( scrollTo.offset().top - container.offset().top + container.scrollTop() ) - parseInt(scrollTo.css('margin-top'));
+        
+        if ( $('.nav-tab').hasClass('affixed')==false ) {
+            scrollValue = scrollValue - 70;
+        }
+        
+        if ( $('body').hasClass('has-sticky-banner') ) {
+            scrollValue = scrollValue - 70;
+        }
+        
+        container.animate({
+            scrollTop: scrollValue
+        });
+        
+        
+        // Mobile Nav
+        $('.nav-current').text( $(this).text() );
+        $('.nav-open .overlay').hide();
+        $('body').removeClass('nav-open');
+        $('.nav-tab').removeClass('open');
+        
+    });
+});
 
     // convert secondas to days/hours/minutes
     function secondsToString(seconds) {

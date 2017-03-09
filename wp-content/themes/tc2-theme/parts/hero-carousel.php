@@ -77,12 +77,13 @@
                     <?php if ( $slide['left_image']!='' ) : ?>
                     <div class="left-image-holder"><img src="<?php echo $slide['left_image']; ?>" alt=""></div>
                     <?php endif; ?>
-                
+                    
+                    <?php endif; ?>
                 </div>
-                <?php endif; ?>
+                
             </div>
             <?php endforeach; ?>
-        </div>
+        </div><!-- / .carousel-inner -->
         
         <?php if ( $carousel_hero ) : ?>
         <!-- Controls -->
@@ -94,5 +95,5 @@
         </a>
         <?php endif; ?>
         
-    </div>
-</div>
+    </div><!-- / #hero-carousel -->
+</div><!-- / .hero-carousel -->

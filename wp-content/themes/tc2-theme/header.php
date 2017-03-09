@@ -33,10 +33,11 @@
         body { padding-top: 32px; }
         .wrapper.moving, .right-aside.moving { top: auto; }
     </style>
-    <?php endif; ?>	
+    <?php endif; ?>
     
     <script src="https://use.typekit.net/bkf5idz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

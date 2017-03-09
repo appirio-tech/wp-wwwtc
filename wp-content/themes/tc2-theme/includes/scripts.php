@@ -2,7 +2,7 @@
 // Add theme CSS files
 function load_site_styles() {
 	global $wp_styles;
-    $v = '20170210';
+    $v = '20170302';
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', false, false, 'all');
     wp_enqueue_style('bootstrap-theme', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap-theme.min.css', false, false, 'all');
     wp_enqueue_style('coverflow', get_template_directory_uri() . '/bower_components/coverflow/dist/coverflow.css', false, false, 'all');
@@ -14,13 +14,30 @@ function load_site_styles() {
 
 // Add theme JS files
 function load_site_scripts() {
-     $v = '20170210';
+     $v = '20170302';
 	//wp_enqueue_script('jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array('jquery'), false, true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), false, true);
     wp_enqueue_script('jquery-touchswipe', get_template_directory_uri() . '/bower_components/jquery-touchswipe/jquery.touchSwipe.min.js', array('jquery'), false, true);
     wp_enqueue_script('coverflow', get_template_directory_uri() . '/bower_components/coverflow/dist/coverflow.min.js', array('jquery'), false, true);
     wp_enqueue_script('ouibounce', get_template_directory_uri() . '/bower_components/ouibounce/build/ouibounce.min.js', array('jquery'), false, true);
+    
+    if ( get_post_type()=='case_studies' ) {
+        wp_enqueue_script('countup', get_template_directory_uri() . '/bower_components/countUp.js/dist/countUp.js', array('jquery'), false, true);
+    }
+    
+	wp_enqueue_script('masonry', get_template_directory_uri() . '/bower_components/masonry/dist/masonry.pkgd.min.js', array('jquery'), false, true);	
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js?v='.$v, array('jquery'), false, true);	
+    
+    $script_data = array(
+        'admin_ajax' => admin_url( 'admin-ajax.php' ),
+        'home_url'   => get_bloginfo( 'url' )
+    );
+    wp_localize_script(
+        'script',
+        'jsvars',
+        $script_data
+    );
+    
 }
 
 add_action('wp_head','load_script', 0);

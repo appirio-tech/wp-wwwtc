@@ -2136,6 +2136,92 @@
             }
         }
     }
+    
+    // Case Studies
+    .case-study-content, .single-case_studies {
+        .hero-carousel {
+            .carousel-inner {
+                .item {
+                    height: 375px !important;
+                    
+                    .carousel-caption {
+                        h1 {
+                            font-size: 65px;
+                            line-height: 70px;
+                        }
+                        p {
+                            font-size: 35px;
+                            line-height: 70px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .contents {
+            width: 95%;
+            
+            .container {
+                width: 100%;
+                
+                .current-category {
+                    display: none;
+                }
+                
+                .categories {
+                    margin: 20px 0;
+                }
+            }
+        }
+        
+        .case-study-teaser {
+            margin-bottom: 70px;
+            padding-bottom: 70px;
+        }
+        
+        .case-studies-metrics {
+            li {
+                display: inline-block;
+                width: 30%;
+            }
+        }
+        
+        .case-studies-post {
+            ul {
+                li {
+                    width: calc(50% - 20px);
+                    
+                    &.ad {
+                        text-align: left;
+                        width: calc(100% - 20px); 
+                        
+                        .ad-content {
+                            left: 40px;
+                            transform: translateY(-50%);
+                            width: calc(100% - 80px);
+                            
+                            h2, p {
+                                width: 50%;
+                            }
+                            
+                            .button {
+                                margin-top: 0;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                        
+                    }
+                }
+                
+                .grid-sizer {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
 }
 
 /* to fix orientation landscape layout */

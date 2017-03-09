@@ -6407,6 +6407,133 @@ The `sprites` mixin generates identical output to the CSS template
     height: 48px;
     width: 48px;
   }
+  .case-study-content .hero-carousel .carousel-inner .item, .single-case_studies .hero-carousel .carousel-inner .item {
+    height: 300px !important;
+  }
+  .case-study-content .hero-carousel .carousel-inner .item .carousel-caption, .single-case_studies .hero-carousel .carousel-inner .item .carousel-caption {
+    left: 7%;
+    right: 7%;
+  }
+  .case-study-content .hero-carousel .carousel-inner .item .carousel-caption h1, .single-case_studies .hero-carousel .carousel-inner .item .carousel-caption h1 {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 0;
+  }
+  .case-study-content .hero-carousel .carousel-inner .item .carousel-caption p, .single-case_studies .hero-carousel .carousel-inner .item .carousel-caption p {
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .case-study-content .contents, .single-case_studies .contents {
+    margin-top: 0;
+  }
+  .case-study-content .contents .container .current-category, .single-case_studies .contents .container .current-category {
+    display: block;
+    margin: 0 -6%;
+  }
+  .case-study-content .contents .container .current-category a, .single-case_studies .contents .container .current-category a {
+    background: #efeff0;
+    color: #37373b;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 5%;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .case-study-content .contents .container .current-category a:active, .case-study-content .contents .container .current-category a:focus, .single-case_studies .contents .container .current-category a:active, .single-case_studies .contents .container .current-category a:focus {
+    text-decoration: none;
+  }
+  .case-study-content .contents .container .current-category a:after, .single-case_studies .contents .container .current-category a:after {
+    background-image: url(../i/sprite.png);
+    background-position: -74px -65px;
+    content: '';
+    height: 14px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+  }
+  .case-study-content .contents .container .categories, .single-case_studies .contents .container .categories {
+    display: none;
+    margin: 0 -6% 20px;
+  }
+  .case-study-content .contents .container .categories li, .single-case_studies .contents .container .categories li {
+    display: block;
+    margin: 0;
+  }
+  .case-study-content .contents .container .categories li a, .single-case_studies .contents .container .categories li a {
+    background: #efeff0;
+    border-radius: 0;
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    height: 45px;
+    line-height: 45px;
+    text-transform: uppercase;
+  }
+  .case-study-content .contents .container .categories li.active a, .single-case_studies .contents .container .categories li.active a {
+    color: #37373b;
+  }
+  .case-study-content .case-study-teaser, .single-case_studies .case-study-teaser {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+  .case-study-content .case-study-quote, .single-case_studies .case-study-quote {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 40px;
+  }
+  .case-study-content .case-study-top-text h2,
+  .case-study-content .case-study-left-text h2,
+  .case-study-content .case-study-right-text h2, .single-case_studies .case-study-top-text h2,
+  .single-case_studies .case-study-left-text h2,
+  .single-case_studies .case-study-right-text h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .case-study-content .case-studies-post ul, .single-case_studies .case-studies-post ul {
+    display: block;
+  }
+  .case-study-content .case-studies-post ul li, .single-case_studies .case-studies-post ul li {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .case-study-content .case-studies-post ul li.ad .ad-content h2, .single-case_studies .case-studies-post ul li.ad .ad-content h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .case-study-content .case-studies-post ul li.ad .ad-content p, .single-case_studies .case-studies-post ul li.ad .ad-content p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .case-study-content .case-studies-post ul li.ad .ad-content .button a, .single-case_studies .case-studies-post ul li.ad .ad-content .button a {
+    font-size: 18px;
+  }
+  .case-study-content .case-studies-post ul .grid-sizer, .single-case_studies .case-studies-post ul .grid-sizer {
+    width: 100%;
+  }
+  .single-case_studies .contents .container .categories {
+    display: block;
+    margin: 10px 0 20px;
+  }
+  .single-case_studies .contents .container .categories li a {
+    background: #dcdce0;
+    display: inline-block;
+    border-radius: 16px;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    text-transform: none;
+  }
+  .page-template-template-branding .brand-section {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 /* Mobile Landscape */
