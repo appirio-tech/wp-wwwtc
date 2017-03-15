@@ -23,7 +23,7 @@ function case_lazy_load(){
         $args = array(
             'post_type'         => array( 'case_studies' ),
             'post_status'       => array( 'publish' ),
-            'posts_per_page'    => '1',
+            'posts_per_page'    => '12',
             'paged'             => $_POST['page'] + 1
         );
         
