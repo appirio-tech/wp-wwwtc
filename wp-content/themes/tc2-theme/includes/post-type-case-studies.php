@@ -34,7 +34,7 @@ function case_studies_post_type() {
 	);
 	$rewrite = array(
 		'slug'                  => 'about-topcoder/case-studies',
-		'with_front'            => true,
+		'with_front'            => false,
 		'pages'                 => true,
 		'feeds'                 => true,
 	);

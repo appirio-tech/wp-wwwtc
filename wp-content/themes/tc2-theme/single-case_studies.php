@@ -22,7 +22,7 @@
                 <div class="categories">
                     <ul>
                         <li class="back-to-case">
-                            <a href="<?php echo get_permalink( get_page_by_path( 'about-topcoder/case-studies' ) ); ?>" data-catfilter="back">
+                            <a href="https://www.topcoder.com/about-topcoder/case-studies/" data-catfilter="back">
                                 <span class="icon-back"></span>
                                 Back to Customer Stories
                             </a>
@@ -38,7 +38,7 @@
                 <?php endif; ?>
                 
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="<?php echo ( isset($fields['metrics']) && count($fields['metrics'])>0 ) ? 'col-md-8' : 'col-md-12'; ?>">
                         <?php if ($fields['quote']!='') : ?>
                         <div class="case-study-quote">
                             <?php echo apply_filters('the_content', $fields['quote']); ?>
@@ -72,8 +72,9 @@
                         </div>
                         
                     </div>
+                    
+                    <?php if ( isset($fields['metrics']) ) : ?>
                     <div class="col-md-4">
-                        <?php if ( isset($fields['metrics']) ) : ?>
                         <div class="case-studies-metrics">
                             <ul>
                                 <?php foreach( $fields['metrics'] as $k=>$v ) : ?>
@@ -88,8 +89,8 @@
                                 <?php endforeach; ?>
                             </ul>
                         </div><!-- / .case-studies-metrics -->
-                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
                 </div>
                 
                 <?php if ( isset($fields['images']) ) : ?>
@@ -133,7 +134,7 @@
                         <?php $prev_post = get_previous_post(); ?>
                         <?php if ( $prev_post ) : ?>
                         <div class="nav-previous">
-                            <a href="/blog/<?php echo $prev_post->post_name; ?>/" rel="prev">
+                            <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $prev_post->post_name; ?>/" rel="prev">
                                 <span class="meta-nav" aria-hidden="true"></span> 
                                 <span class="screen-reader-text">Previous Post</span> 
                                 <span class="post-title"><?php echo $prev_post->post_title; ?></span>
@@ -144,7 +145,7 @@
                         <?php $next_post = get_next_post(); ?>
                         <?php if ( $next_post ) : ?>
                         <div class="nav-next">
-                            <a href="/blog/<?php echo $next_post->post_name; ?>/" rel="next">
+                            <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $next_post->post_name; ?>/" rel="next">
                                 <span class="meta-nav" aria-hidden="true"></span> 
                                 <span class="screen-reader-text">Next Post</span> 
                                 <span class="post-title"><?php echo $next_post->post_title; ?></span>

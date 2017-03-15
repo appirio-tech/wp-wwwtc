@@ -77,7 +77,7 @@
                         $args = array(
                             'post_type'              => array( 'case_studies' ),
                             'post_status'            => array( 'publish' ),
-                            'posts_per_page'         => '12',
+                            'posts_per_page'         => '1',
                         );
                         
                         // The Query
@@ -92,9 +92,8 @@
                                 $ctr++;
                                 
                             ?>
-                            
                             <li class="<?php echo $terms[0]->slug; ?> visible">
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $post->post_name; ?>/">
                                     <span class="case-img">
                                         <?php
                                             if ( has_post_thumbnail() ) {

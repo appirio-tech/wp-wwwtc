@@ -10,20 +10,15 @@ jQuery(document).ready(function($){
     });
 
     $("#coverflow").on("swipe",function(){
-      console.log("abc");
       // $(this).hide();
     });
 
     $(".carousel-indicators li.team-item").each(function(index){
 
       $(this).on("click", function(e){
-        // console.log(index);
-      // $(this).click(function(e){
-        // console.log(e);
         $('#coverflow' ).coverflow( 'select', index );
       });
 
-      // console.log($(".team-item-dot-" + index));
     });
 
 
@@ -717,7 +712,8 @@ jQuery(document).ready(function($){
             itemSelector: '.case-studies-post ul li.visible',
             gutter: 20,
             columnWidth: '.grid-sizer',
-            percentPosition: true
+            percentPosition: true,
+            transitionDuration: 0
         });
         
         $grid.imagesLoaded().progress( function() {
@@ -729,7 +725,7 @@ jQuery(document).ready(function($){
         var loading = false;
         if ( $('#case-page').length>0 ) {
             $('.case-study-content').on("scroll",function(){
-                if ( $('footer').offset().top<500 && loading==false ) {
+                if ( $('footer').offset().top<800 && loading==false ) {
                     loading = true;
                     $.post(
                         jsvars.admin_ajax,
@@ -754,7 +750,9 @@ jQuery(document).ready(function($){
                             }
                             
                             $grid.masonry('reloadItems');
-                            $grid.masonry('layout');
+                            $grid.imagesLoaded().progress( function() {
+                                $grid.masonry('layout');
+                            });
                         }
                     );
                 }

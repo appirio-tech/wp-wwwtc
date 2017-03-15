@@ -6166,15 +6166,19 @@ $cOrange: #f59121;
             z-index: -1;
         }
         
-        p { 
-            &:after {
-                background: url(../i/quote-end.png);
-                bottom: 0;
-                content: '';
-                height: 58px;
-                position: absolute;
-                width: 75px;
-                z-index: -1;
+        p {
+            margin-bottom: 40px;
+            &:last-of-type {
+                &:after {
+                    background: url(../i/quote-end.png);
+                    bottom: 0;
+                    content: '';
+                    height: 58px;
+                    position: absolute;
+                    transform: translateX(-30px);
+                    width: 75px;
+                    z-index: -1;
+                }
             }
         }
     }
@@ -6363,7 +6367,7 @@ $cOrange: #f59121;
                 .case-subtitle {
                     display: block;
                     font-size: 20px;
-                    line-height: 40px;
+                    line-height: 1.2;
                 }
                 
                 .case-term {

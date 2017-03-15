@@ -23,7 +23,7 @@ function case_lazy_load(){
         $args = array(
             'post_type'         => array( 'case_studies' ),
             'post_status'       => array( 'publish' ),
-            'posts_per_page'    => '12',
+            'posts_per_page'    => '1',
             'paged'             => $_POST['page'] + 1
         );
         
@@ -34,23 +34,22 @@ function case_lazy_load(){
         if ( $query->have_posts() ) :
             while ( $query->have_posts() ) : 
                 $query->the_post(); 
-                $terms = get_the_terms( $post->ID , 'case_study_category' );
+                $terms = get_the_terms( $query->post->ID , 'case_study_category' );
         ?>
-            <li class="<?php echo $terms[0]->slug; ?>">
-                <a href="<?php the_permalink(); ?>">
+            <pre><?php print_r($post); ?></pre>
+            <li class="<?php echo $terms[0]->slug; ?> visible">
+                <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $query->post->post_name; ?>/">
                     <span class="case-img">
                         <?php
                             if ( has_post_thumbnail() ) {
                                 //the_post_thumbnail('full');
-                                $src = get_the_post_thumbnail_url( $post->ID, 'full' );
+                                $src = get_the_post_thumbnail_url( $query->post->ID, 'full' );
                                 $src = str_replace('wp-content/uploads//nas/content/live/wwwtc//', '', $src);
                                 echo '<img src="'.$src.'" alt="">';
-                                
-                                //https://wwwtc.wpengine.com/wp-content/uploads//nas/content/live/wwwtc//wp-content/media/2017/03/seen-thumb-1.jpg
                             }
                         ?>
                     </span>
-                    <span class="case-title"><?php echo $i . get_field('title'); ?></span>
+                    <span class="case-title"><?php echo get_field('title'); ?></span>
                     <span class="case-subtitle"><?php echo get_field('subtitle'); ?></span>
                     <span class="case-term"><?php echo $terms[0]->name; ?></span>
                     <span class="case-details">View Details</span>
