@@ -45,6 +45,13 @@
                         </div><!-- / .case-study-quote -->
                         <?php endif; ?>
                         
+                        <?php if ($fields['intro_text_copy']!='') : ?>
+                        <div class="case-study-top-text">
+                            <?php if ($fields['intro_text_title']!='') : ?><h2><?php echo $fields['intro_text_title']; ?></h2><?php endif; ?>
+                            <?php echo apply_filters('the_content', $fields['intro_text_copy']); ?>
+                        </div><!-- / Intro Text -->
+                        <?php endif; ?>
+                        
                         <?php if ($fields['top_text_copy']!='') : ?>
                         <div class="case-study-top-text">
                             <?php if ($fields['top_text_title']!='') : ?><h2><?php echo $fields['top_text_title']; ?></h2><?php endif; ?>

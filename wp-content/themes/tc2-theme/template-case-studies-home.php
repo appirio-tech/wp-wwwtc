@@ -20,7 +20,7 @@
         <div class="contents">
             <div class="container">
                
-                <div class="current-category"><a href="javascript:;">All Case Studies</a></div>
+                <div class="current-category"><a href="javascript:;">All Customer Stories</a></div>
                 
                 <div class="categories">
                     <ul>
