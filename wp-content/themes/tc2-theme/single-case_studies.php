@@ -45,6 +45,18 @@
                         </div><!-- / .case-study-quote -->
                         <?php endif; ?>
                         
+                        <?php if ($fields['quote_name']!='') : ?>
+                        <div class="quote-name">
+                            <?php echo $fields['quote_name']; ?>
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php if ($fields['quote_title']!='') : ?>
+                        <div class="quote-title">
+                            <?php echo $fields['quote_title']; ?>
+                        </div>
+                        <?php endif; ?>
+                        
                         <?php if ($fields['intro_text_copy']!='') : ?>
                         <div class="case-study-top-text">
                             <?php if ($fields['intro_text_title']!='') : ?><h2><?php echo $fields['intro_text_title']; ?></h2><?php endif; ?>
