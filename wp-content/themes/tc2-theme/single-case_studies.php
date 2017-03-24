@@ -112,6 +112,14 @@
                     <?php endif; ?>
                 </div>
                 
+                <?php if ( isset($fields['video']) && $fields['video'] ) : ?>
+                <div class="case-studies-video">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $fields['video']; ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <?php endif; ?>
+                
                 <?php if ( isset($fields['images']) ) : ?>
                 <div class="case-studies-images">
                     <div id="carousel-case-studies" class="carousel slide" data-ride="carousel" data-interval="false">
