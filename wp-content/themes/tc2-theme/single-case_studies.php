@@ -22,7 +22,7 @@
                 <div class="categories">
                     <ul>
                         <li class="back-to-case">
-                            <a href="https://www.topcoder.com/about-topcoder/case-studies/" data-catfilter="back">
+                            <a href="https://www.topcoder.com/about-topcoder/customer-stories/" data-catfilter="back">
                                 <span class="icon-back"></span>
                                 Back to Customer Stories
                             </a>
@@ -161,7 +161,7 @@
                         <?php $prev_post = get_previous_post(); ?>
                         <?php if ( $prev_post ) : ?>
                         <div class="nav-previous">
-                            <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $prev_post->post_name; ?>/" rel="prev">
+                            <a href="https://www.topcoder.com/about-topcoder/customer-stories/<?php echo $prev_post->post_name; ?>/" rel="prev">
                                 <span class="meta-nav" aria-hidden="true"></span> 
                                 <span class="screen-reader-text">Previous Post</span> 
                                 <span class="post-title"><?php echo $prev_post->post_title; ?></span>
@@ -172,7 +172,7 @@
                         <?php $next_post = get_next_post(); ?>
                         <?php if ( $next_post ) : ?>
                         <div class="nav-next">
-                            <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $next_post->post_name; ?>/" rel="next">
+                            <a href="https://www.topcoder.com/about-topcoder/customer-stories/<?php echo $next_post->post_name; ?>/" rel="next">
                                 <span class="meta-nav" aria-hidden="true"></span> 
                                 <span class="screen-reader-text">Next Post</span> 
                                 <span class="post-title"><?php echo $next_post->post_title; ?></span>

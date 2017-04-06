@@ -33,7 +33,7 @@ function case_studies_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'tc' ),
 	);
 	$rewrite = array(
-		'slug'                  => 'about-topcoder/case-studies',
+		'slug'                  => 'about-topcoder/customer-stories',
 		'with_front'            => false,
 		'pages'                 => true,
 		'feeds'                 => true,

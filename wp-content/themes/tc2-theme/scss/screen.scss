@@ -6183,18 +6183,6 @@ $cOrange: #f59121;
         }
     }
     
-    .quote-name {
-        font-size: 18px;
-        font-weight: bold;
-        margin-top: -30px;
-    }
-    
-    .quote-title {
-        color: #a3a3ad;
-        font-size: 18px;
-        margin-bottom: 60px;
-    }
-    
     .case-study-top-text, 
     .case-study-left-text,
     .case-study-right-text {
@@ -6454,6 +6442,18 @@ $cOrange: #f59121;
         
         
     }
+}
+
+.quote-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -30px;
+}
+
+.quote-title {
+    color: #a3a3ad;
+    font-size: 18px;
+    margin-bottom: 60px;
 }
 
 .page-template-template-branding {

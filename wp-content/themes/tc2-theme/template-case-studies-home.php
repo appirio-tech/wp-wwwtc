@@ -24,7 +24,7 @@
                 
                 <div class="categories">
                     <ul>
-                        <li class="active"><a href="javascript:;" data-catfilter="all">All Case Studies</a></li>
+                        <li class="active"><a href="javascript:;" data-catfilter="all">All Customer Stories</a></li>
                         <?php
                             // get all custom taxonomy
                             $casecat = get_terms( array(
@@ -93,7 +93,7 @@
                                 
                             ?>
                             <li class="<?php echo $terms[0]->slug; ?> visible">
-                                <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $post->post_name; ?>/">
+                                <a href="https://www.topcoder.com/about-topcoder/customer-stories/<?php echo $post->post_name; ?>/">
                                     <span class="case-img">
                                         <?php
                                             if ( has_post_thumbnail() ) {

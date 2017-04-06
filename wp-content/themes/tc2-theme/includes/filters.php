@@ -38,7 +38,7 @@ function case_lazy_load(){
         ?>
             <pre><?php print_r($post); ?></pre>
             <li class="<?php echo $terms[0]->slug; ?> visible">
-                <a href="https://www.topcoder.com/about-topcoder/case-studies/<?php echo $query->post->post_name; ?>/">
+                <a href="https://www.topcoder.com/about-topcoder/customer-stories/<?php echo $query->post->post_name; ?>/">
                     <span class="case-img">
                         <?php
                             if ( has_post_thumbnail() ) {
