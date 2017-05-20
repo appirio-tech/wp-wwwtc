@@ -474,6 +474,19 @@
     }
     
     
+    // Section 2x2
+    .generic-section-2x2 {
+        .mains {
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
+        }
+    }
+    
+    
     /*** what can you do page ***/
     /* .top-banner-overview */
     .top-banner.top-banner-overview {
@@ -623,7 +636,7 @@
             
             &.contact-white-module {
                 .section-contact {
-                    padding: 50px 0;
+                    padding: 80px 0 50px;
                 }
             }
             
@@ -1113,7 +1126,7 @@
             
             .titles {
                 font-size: 30px;
-                font-weight: 600;
+                font-weight: 300;
             }
             
             .form-contact {
@@ -1140,7 +1153,7 @@
         &.contact-white-module .section-contact .titles {
             padding: 0 0 28px 0;
             line-height: 35px;
-            width: 450px;
+            width: 90%;
         }
         
         &.contact-black-module {

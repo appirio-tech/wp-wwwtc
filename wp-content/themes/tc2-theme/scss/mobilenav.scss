@@ -1,6 +1,6 @@
 /* .header */
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -218,9 +218,9 @@
     }
 
     .btn-get-started {
-        left: 0;
+        left: 15px;
         position: absolute;
-        top: 0;
+        top: 10px;
         width: 160px;
 
         &:after {

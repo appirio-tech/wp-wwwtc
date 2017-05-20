@@ -39,9 +39,13 @@
         if ( $fields['page_banner_as_slide'] ) {
             array_unshift($arrSlides, $slides);
         }
+        
+        $caption_class  = '';
+        
     } else {
         $data_interval  = 'false';
         $arrSlides[]    = $slides;
+        $caption_class  = 'caption-full';
     }
 ?>
 <div class="hero-carousel">
@@ -50,9 +54,9 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <?php foreach( $arrSlides as $ks=>$slide ) : ?>
-            <div class="item <?php echo $ks==0 ? 'active' : ''; ?>" style="background-image: url(<?php echo $slide['background']; ?>);">
+            <div class="item <?php echo $ks==0 ? 'active' : ''; ?>" style="background-image: url(<?php echo str_replace('//wp-content/media//nas/content/live/wwwtc/', '', $slide['background']); ?>);">
                 
-                <div class="carousel-caption <?php echo $slide['layout']=='2 Column' ? 'hero-two-column' : ''; ?>">
+                <div class="carousel-caption <?php echo $slide['layout']=='2 Column' ? 'hero-two-column' : ''; ?> <?php echo $caption_class; ?>">
                     <?php if ($slide['title']!='') : ?><h1><?php echo $slide['title']; ?></h1><?php endif; ?>
                     <?php if ($slide['description']!='') : ?><p><?php echo $slide['description']; ?></p><?php endif; ?>
                     

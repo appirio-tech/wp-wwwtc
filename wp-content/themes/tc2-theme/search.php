@@ -5,7 +5,7 @@
     <div class="wrapper generic">
         <div class="mask js-close-nav"></div>
         
-        <?php get_template_part('parts/top-head-blog'); ?>
+        <?php get_template_part('parts/top-head'); ?>
         
         <div class="top-banner top-banner-blog" ></div>
         
@@ -13,26 +13,49 @@
         <div class="contents">
             <a name="fold"></a>
             
-            <h2 class="titles"><?php printf( __( 'Search Results for: %s', 'twentysixteen' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h2>
+            <h2 class="titles">Search Results: <?php echo get_search_query(); ?></h2>
             
             <?php
                 
                 if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <div class="blog-list-item">
-                    <div class="blog-list-item-content">
-                        <h2 class="text-center"><?php the_title(); ?></h2>
-                        <div class="blog-list-item-excerpt">
+                <div class="item">
+                    <div class="item-content">
+                        <h2 class="item-title"><a href="/blog/<?php echo $post->post_name; ?>/"><?php the_title(); ?></a></h2>
+                        <div class="item-excerpt">
                             <?php the_excerpt(); ?>
                         </div>
-                        <a href="/blog/<?php echo $post->post_name; ?>/" class="btn-blue">Read the full story</a>
+                        <div class="item-meta">
+                            <p>
+                                <?php 
+                                    $author_nicename = get_the_author_meta('nicename');
+                                    if ($author_nicename!='') : ?>
+                                By 
+                                <span>
+                                    <a href="/blog/author/<?php echo $author_nicename; ?>/"><?php echo $author_nicename; ?></a>
+                                </span> 
+                                <?php endif; ?>
+                                
+                                In 
+                                <span>
+                                    <?php 
+                                        $separator      = ', ';
+                                        $output         = '';
+                                        $categories 	= 	get_the_category();
+                                        if ( ! empty( $categories ) ) {
+                                            foreach( $categories as $category ) {
+                                                //$output .= '<a class="category" href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"><span class="font-lato">' . esc_html( $category->name ) . '</span></a>' . $separator;
+                                                $output .= '<a class="category" href="/blog/category/'.$category->slug.'/" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '"><span class="font-lato">' . esc_html( $category->name ) . '</span></a>' . $separator;
+                                            }
+                                            echo trim( $output, $separator );
+                                        }
+                                    ?>
+                                </span> 
+                            </p>
+                            <p>
+                                Posted <?php echo get_the_time('F jS, Y'); ?>
+                            </p>
+                        </div>
                     </div>
-                    <?php 
-                        if ( has_post_thumbnail() ) {
-                            the_post_thumbnail();
-                        } else {
-                            echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/blog/images/default-thumb.jpg" />';
-                        }
-                    ?>
                 </div>
             <?php endwhile; 
                 

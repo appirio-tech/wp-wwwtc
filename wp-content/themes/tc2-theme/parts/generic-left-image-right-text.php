@@ -1,4 +1,10 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="item generic-left-image-right-text mobile-info-area info-area <?php if($generic_section_key===0){ echo 'active';} ?>">
+<?php
+    $extra_class = '';
+    if ( !isset($generic_section_val['background']) || $generic_section_val['background']=='None' ) {
+        $extra_class .= ' no-bg';
+    }
+?>
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="item generic-left-image-right-text mobile-info-area info-area <?php if($generic_section_key===0){ echo 'active';} ?> <?php echo $extra_class; ?>">
     <div class="inner-con  <?php echo (!$generic_section_val['side_image']? 'no-side-img' : '') ?>">
     <div class="match-iphone <?php echo $generic_section_val['side_image_position']=='Edge' ? 'left-truncate' : ''; ?>">
         <?php if ($generic_section_val['side_image']!='') : ?>
@@ -29,7 +35,7 @@
         <?php endif; ?>
         
         <?php if ( $generic_section_val['bottom_button'][0]['label']!='' ) : ?>
-        <a href="<?php echo $generic_section_val['bottom_button'][0]['url']; ?>" target="<?php echo $generic_section_val['bottom_button'][0]['target_window']; ?>" class="btn-blue">
+        <a href="<?php echo $generic_section_val['bottom_button'][0]['url']; ?>" target="<?php echo $generic_section_val['bottom_button'][0]['target_window'][0]; ?>" class="btn-blue">
             <?php echo $generic_section_val['bottom_button'][0]['label']; ?>
         </a>
         <?php endif; ?>

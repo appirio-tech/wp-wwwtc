@@ -861,6 +861,16 @@ jQuery(document).ready(function($){
         $('.nav-tab').removeClass('open');
         
     });
+    
+    
+    // Blog Search
+    $('.search-icon').click(function(){
+        if ( $('.blog-search').hasClass('expanded') ) {
+            $('.blog-search').removeClass('expanded');
+        } else {
+            $('.blog-search').addClass('expanded');
+        }
+    });
 });
 
     // convert secondas to days/hours/minutes

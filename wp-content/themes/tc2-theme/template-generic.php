@@ -47,6 +47,7 @@
         <?php include(locate_template('parts/hero-carousel.php')); ?>
         
         
+        <?php/*
         <?php if ( $fields['middle_page_navigation']>0 ) : ?>
         <!-- START OF MIDDLE PAGE NAVIGATION -->
         <nav class="nav-tab js-nav-tab js-affix nav-tab-generic">
@@ -63,67 +64,11 @@
         <div class="nav-placeholder tab-generic hide"></div>
         <!-- END OF MIDDLE PAGE NAVIGATION -->
         <?php endif; ?>
-        
+        */ ?>
         
         <?php if ( count($fields['sections'])>0 ) : ?>
         <div class="contents">
            <a name="fold"></a>
-
-           <!-- Mobile Sliders -->
-            <?php 
-                // We enable sliders in case of "marketplace - overview" page.
-                $post_id = get_the_ID();
-                $post = get_post($post_id);
-                $slug = $post->post_name;
-
-                if($slug === 'marketplace') :
-            ?>
-                <div id="marketingSlider" class="visible-xs carousel multi-item-carousel default-carousel slide js-slider" data-ride="carousel" data-interval=false>
-                    <ol class="carousel-indicators">
-                        <?php 
-                            if ( $fields['sections'] ) : 
-                                foreach( $fields['sections'] as $k=>$v ) :
-                                    if ($v['section_type'] === 'Left-Text / Right-Image' ||
-                                        $v['section_type'] === 'Left-Image / Right-Text'):
-                        ?>
-                            <li data-target="#marketingSlider" data-slide-to="<?php echo $k; ?>" class="<?php if($k===0){ echo 'active';} ?>"></li>
-                        <?php 
-                                    endif;
-                                endforeach;
-                            endif;
-                        ?>
-                    </ol>
-                    <div class="carousel-inner inner" role="listbox">
-                        <?php 
-                            if ( $fields['sections'] ) : 
-                                for($i = 0; $i < count($fields['sections']); $i++) : 
-                                    $generic_section_key = $i;
-                                    $generic_section_val = $fields['sections'][$i];
-                                    if ($generic_section_val['section_type'] === 'Left-Text / Right-Image' ||
-                                        $generic_section_val['section_type'] === 'Left-Image / Right-Text') :
-                        ?>
-                            <?php
-                                switch ( $generic_section_val['section_type']) {
-                                    case 'Left-Text / Right-Image':
-                                        include(locate_template('parts/generic-left-text-right-image.php'));
-                                        break;
-                                    case 'Left-Image / Right-Text':
-                                        include(locate_template('parts/generic-left-image-right-text.php'));
-                                        break;
-                                    default: // plain
-                                        include(locate_template('parts/generic-plain.php'));
-                                }
-                            ?>
-                        <?php 
-                                    endif;
-                                endfor; 
-                            endif; 
-                        ?>
-                    </div>
-                </div>
-            <?php 
-                endif;
-            ?>
             
             <!-- START OF SECTIONS -->
             <?php 
@@ -171,6 +116,12 @@
                             break;
                         case 'Testimonials':
                             include(locate_template('parts/generic-testimonials.php'));
+                            break;
+                        case 'TwoByTwo':
+                            include(locate_template('parts/generic-2x2.php'));
+                            break;
+                        case 'Columns':
+                            include(locate_template('parts/generic-columns.php'));
                             break;
                         default: // plain
                             include(locate_template('parts/generic-plain.php'));

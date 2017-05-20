@@ -371,6 +371,12 @@ The `sprites` mixin generates identical output to the CSS template
     height: 50px;
     line-height: 50px;
   }
+  .generic-section-2x2 .mains:before {
+    display: none;
+  }
+  .generic-section-2x2 .mains:after {
+    display: none;
+  }
   /*** what can you do page ***/
   /* .top-banner-overview */
   .top-banner.top-banner-overview {
@@ -471,7 +477,7 @@ The `sprites` mixin generates identical output to the CSS template
     height: 336px;
   }
   .generic .generic-contact-form.contact-white-module .section-contact {
-    padding: 50px 0;
+    padding: 80px 0 50px;
   }
   .generic .generic-contact-form .btn-crowdsourcing-today {
     height: 40px;
@@ -807,7 +813,7 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .contact-module .section-contact .titles {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 300;
   }
   .contact-module .section-contact .form-contact .inputs, .contact-module .section-contact .form-contact .textareas {
     margin: 0 0 10px;
@@ -822,7 +828,7 @@ The `sprites` mixin generates identical output to the CSS template
   .contact-module.contact-white-module .section-contact .titles {
     padding: 0 0 28px 0;
     line-height: 35px;
-    width: 450px;
+    width: 90%;
   }
   .contact-module.contact-black-module .container-fluid {
     padding: 0;

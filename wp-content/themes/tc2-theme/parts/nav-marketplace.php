@@ -1,3 +1,4 @@
+<?php/*
 <nav class="nav-tab js-nav-tab nav-tab-marketplace">
     <a class="nav-current visible-xs"> <?php echo get_the_title() ?></a>
    <?php
@@ -11,3 +12,4 @@
 </nav>
 <div class="nav-placeholder tab-marketplace hide"></div>
 <!-- end .nav-tab -->
+*/ ?>

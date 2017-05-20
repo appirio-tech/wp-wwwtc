@@ -34,7 +34,6 @@
                 $fields = get_fields($v->ID);
                 $html .= '<li data-target="#carousel-quotes-'.$unique_id.'" data-slide-to="'.$k.'" class="'. (($k==0) ? "active" : "") .'">
                             <img src="'. $fields['testimonial_photo'] .'" alt="head">
-                            <span class="cover"></span>
                           </li>';
             endforeach;
             $html .= '</ol>';
@@ -45,7 +44,12 @@
         if ( isset($query->posts) ) : 
             foreach( $query->posts as $k=>$v ) :
             $fields = get_fields($v->ID);
-            $html .= '<div class="item quotes-photo'. ($k+1) . (($k==0) ? ' active' : '') . '" style="background-image: url('.$fields['testimonial_background_image'].') !important;">
+            
+            if ( $fields['testimonial_background_image'] && $objCat->slug!='community' ) {
+                $img_bg = 'style="background-image: url('.$fields['testimonial_background_image'].') !important;"';
+            }
+            
+            $html .= '<div class="item quotes-photo'. ($k+1) . (($k==0) ? ' active' : '') . '" '.$img_bg.'>
                         <div class="container">
                             <div class="valign-middle">
                                 <div class="info-main">

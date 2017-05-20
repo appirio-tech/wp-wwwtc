@@ -24,11 +24,14 @@
                     </div>
                     <?php 
                         if ( has_post_thumbnail() ) {
-                            the_post_thumbnail();
+                            $bg_url = get_the_post_thumbnail_url($post->ID, 'large');
                         } else {
-                            echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/blog/images/default-thumb.jpg" />';
+                            $bg_url = catch_that_image();
                         }
                     ?>
+                    <?php if ( $bg_url ) : ?>
+                    <img src="<?php echo $bg_url; ?>" alt="">
+                    <?php endif; ?>
                 </div>
             <?php endwhile; 
                 

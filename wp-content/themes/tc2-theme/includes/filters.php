@@ -65,3 +65,21 @@ function case_lazy_load(){
 }
 add_action('wp_ajax_case_lazy_load', 'case_lazy_load');
 add_action('wp_ajax_nopriv_case_lazy_load', 'case_lazy_load');
+
+
+// Allow SVG upload
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+
+// Search only blog posts
+function search_filter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts','search_filter');

@@ -24,7 +24,7 @@
             <?php endif; ?>
 
             <?php if ( $generic_section_val['bottom_button'][0]['label']!='' ) : ?>
-            <a href="<?php echo $generic_section_val['bottom_button'][0]['url']; ?>" target="<?php echo $generic_section_val['bottom_button'][0]['target_window']; ?>" class="btn-blue">
+            <a href="<?php echo $generic_section_val['bottom_button'][0]['url']; ?>" target="<?php echo $generic_section_val['bottom_button'][0]['target_window'][0]; ?>" class="btn-blue">
                 <?php echo $generic_section_val['bottom_button'][0]['label']; ?>
             </a>
             <?php endif; ?>

@@ -6,16 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <?php 
     if ( is_single() ) : 
-    
+        
         if ( has_post_thumbnail($post->ID) ) {
             $bg_url = get_the_post_thumbnail_url($post->ID, 'full');
         } else {
             $bg_url = catch_that_image();
         }
+        
+        $bg_url = str_replace('tc.wpengine.com//', '.topcoder.com/', $bg_url);
     ?>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@topcoder">
@@ -24,6 +26,7 @@
     <meta name="twitter:image" content="<?php echo $bg_url; ?>">
     <link rel="canonical" href="https://www.topcoder.com/blog/<?php echo $post->post_name; ?>/">
     <?php endif; ?>
+    <meta name="card-image" content="<?php echo $bg_url; ?>">
     
     <title><?php bloginfo('name'); ?> <?php is_home() ? '' : ' | ' . wp_title(''); ?></title>
 
@@ -82,6 +85,14 @@
         })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
     
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MXXQHG8');</script>
+    <!-- End Google Tag Manager -->
+    
 </head>
 <?php
     // WP_Query arguments for Sticky Banner
@@ -118,11 +129,12 @@
     wp_reset_postdata();
     
     $class[] = 'page-body-'.$post->post_name;
-    
-    // add class in the body if there is middle page navigation
-    if ( get_field('middle_page_navigation')>0 ) {
-        $class[] = 'has-middle-page-navigation';
-    }
 ?>
 <body <?php body_class($class); ?>>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXXQHG8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <?php echo $sticky_banner; ?>

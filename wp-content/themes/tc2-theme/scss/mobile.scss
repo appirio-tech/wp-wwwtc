@@ -1067,10 +1067,10 @@
         text-align: center;
         padding: 0 35px 0 40px;
         .txt {
-          font-size: 20px;
+          font-size: 20px !important;
           font-weight: 600;
           color: #fff;
-          line-height: 1.2;
+          line-height: 1.2 !important;
           padding-bottom: 26px;
           max-width: 1280px;
           margin-right: auto;
@@ -1090,8 +1090,6 @@
       }
     }
     .head-box {
-      background: #fff;
-      height: 12%;
       text-align: center;
       position: absolute;
       bottom: 0;
@@ -1112,9 +1110,7 @@
           text-indent: 0;
           position: relative;
           cursor: pointer;
-          background: none;
           border: none;
-          border-radius: 0;
           display: inline-block;
           &:hover .cover {
             opacity: 0.58;
@@ -1128,21 +1124,6 @@
             width: 68px;
             height: 68px;
             border-radius: 100%;
-          }
-          .cover {
-            background: #000;
-            opacity: 0.78;
-            width: 68px;
-            height: 68px;
-            border-radius: 100%;
-            display: block;
-            top: 0;
-            left: 0;
-            z-index: 99;
-            position: absolute;
-          }
-          &.active .cover {
-            display: none;
           }
         }
       }
@@ -1193,7 +1174,7 @@
       font-size: $fz-large;
       color: #fff;
       line-height: 1.2;
-      font-weight: 600;
+      font-weight: 300;
       width: auto;
       margin-right: auto;
       margin-left: auto;
@@ -2595,7 +2576,7 @@
   /* .mobile-info-area */
   .mobile-info-area {
     background: #fff;
-    min-height: 612px;
+    //min-height: 612px;
     overflow: hidden;
     position: relative;
     .match-iphone {
@@ -2646,10 +2627,11 @@
       }
       .btn-blue {
         min-width: $bw-medium;
-        position: absolute;
-        bottom: 8px;
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
+        position: relative;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        white-space: nowrap;
       }
     }
   }
@@ -4810,10 +4792,20 @@
       padding-top: 0;
     }
     .generic-section-plain {
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin-top: 0;
-      padding: $sp-2x $gutter2x;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 0;
+        padding: $sp-2x $gutter2x;
+        .mains {
+            margin-top: 30px;
+            .main-boxs {
+                .main-lefts {
+                    .txt-p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
     }
     // left-image / right-text && left-text / right-image
     .generic-left-image-right-text {
@@ -4835,7 +4827,7 @@
         width: auto;
         flex: 0 100%;
         img {
-          max-width: 85px;
+          max-width: 90%;
           width: auto;
         }
         &.left-truncate {
@@ -4869,15 +4861,17 @@
          }
         }
         .detail {
-          font-size: $fz-small;
-          text-align: left;
+            font-size: 16px;
+            text-align: left;
+            padding-bottom: 10px;
+            font-weight: bold;
         }
         .txt-p {
           padding-right: 0;
           p {
             font-size: $fz-medium;
             line-height: 1.4;
-            margin-bottom: 25px;
+            margin: 25px 0;
           }
         }
       }
@@ -4912,10 +4906,8 @@
         vertical-align: middle;
         width: 100%;
         padding: 10px 0 10px;
-        height: 172px;
         img {
-          max-width: 100%;
-          max-height: 100%;
+          max-width: 90%;
           width: auto;
         }
         &.right-truncate {
@@ -4931,7 +4923,7 @@
       .mains {
         order: 1;
         margin: 0;
-        padding: 0 $gutter3x;
+        padding: 30px $gutter3x 0;
         position: relative;
         vertical-align: top;
         width: 100%;
@@ -4958,8 +4950,8 @@
         }
         .txt-p {
           p {
-            font-size: $fz-x-small;
-            line-height: 1.2;
+            font-size: 15px;
+            line-height: 1.4;
             margin-bottom: 20px;
             text-align: left;
           }
@@ -5035,7 +5027,7 @@
     .generic-contact-form {
       &.contact-white-module {
         .section-contact {
-          padding: 0;
+          padding: 50px 0;
         }
         .sub-titles {
           color: #666;
@@ -5045,7 +5037,8 @@
       .btn-crowdsourcing-today {
         border-radius: 25px;
         margin: 0 auto;
-        width: $bw-medium;
+        width: auto;
+        white-space: nowrap;
       }
     }
     // Testimonials
@@ -5066,6 +5059,13 @@
 
       &.mobile-info-area{
         background-position: 50% 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding-top: 220px;
+          
+        &.no-bg {
+            padding-top: 0;  
+        }
       }
       &#generic-section-4{
         background-position: 0% -80px;   
@@ -5234,7 +5234,7 @@
     }
     .contact-module .section-contact .valign-middle {
       min-height: 50px;
-      height: 184px;
+      height: auto;
     }
   }
     
@@ -6128,265 +6128,6 @@
       }
     }
   }
-
-  /* Marketing - Overview */
-  .page-id-324 {
-    .wrapper.generic {
-      .top-banner {
-        background-position-x: -80px;
-        .container {
-          .valign-middle {
-            .valign-con {
-              margin-top: -90px;
-              .titles {
-                padding-top: 0px;
-                line-height: 36px;
-                letter-spacing: 1px;
-                height: 72px;
-              }
-              .txt {
-                padding-right: 102px;
-                line-height: 18px;
-                margin-top: 0px;
-                padding-top: 7px;
-                height: 66px;
-                letter-spacing: 0.5px;
-              }
-              .row {
-                padding-left: 22px;
-                .btn-white {
-                  padding-left: 15px;
-                }
-              }
-            }
-          }
-        }
-      }
-      .contents {
-        .wrap {
-          .inner {
-            #generic-section-0,
-            #generic-section-1,
-            #generic-section-2,
-            #generic-section-3,
-            #generic-section-4,
-            #generic-section-5 {
-              display: none;
-            }
-            .generic-testimonials {
-              .section-quotes {
-                .carousel {
-                  .carousel-inner {
-                    height: 431px;
-                    .container {
-                      .valign-middle {
-                        .info-main {
-                          padding: 0px 35px 0 40px;
-                          .txt {
-                            font-size: 19px;
-                            font-weight: 500;
-                            margin-top: -33px;
-                            line-height: 24px;
-                            letter-spacing: 0.5px;
-                          }
-                        }
-                      }
-                    }
-                  }
-                  .head-box {
-                    .carousel-indicators {
-                      top: -24px;
-                      li.active {
-                        width: 48px;
-                        height: 48px;
-                      }
-                      li {
-                        width: 48px;
-                        height: 48px;
-                        margin-left: 4px;
-                        margin-right: 4px;
-                        img {
-                          width: 48px;
-                          height: 48px;
-                        }
-                        span.cover {
-                          width: 48px;
-                          height: 48px; 
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .generic-contact-form {
-              text-align: center;
-              .btn-crowdsourcing-today {
-                width: initial;
-                display: inline-block;
-              }
-            }
-          }
-        }
-        #marketingSlider {
-          margin-bottom: 30px;
-          padding-bottom: 0px;
-          height: 586px;
-          .carousel-inner {
-            height: 617px;
-            overflow: hidden;
-            #generic-section-0,
-            #generic-section-1,
-            #generic-section-2,
-            #generic-section-3,
-            #generic-section-4,
-            #generic-section-5 {
-              height: 540px;
-              .inner-con {
-                height: 100%;
-                .match-iphone {
-                  padding: 0px;
-                  img {
-                    max-width: 80%;
-                    margin-top: 20px;
-                  }
-                }
-                .mains {
-                  padding-left: 0px;
-                  padding-right: 0px;
-                  margin-top: 0px;
-                  .icons {
-                    display: block;
-                    width: 100%;
-                    left: 0px;
-                    position: initial;
-                    margin-left: 0px;
-                    img {
-                      display: block;
-                    }
-                  }
-                  .titles {
-                    margin-left: 0px;
-                    font-size: 17px;
-                    padding-left: 20px;
-                    min-height: 48px;
-                  }
-                  .detail {
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    padding-bottom: 10px;
-                    margin-top: 0px;
-                    margin-bottom: 0px;
-                    font-size: 15px; 
-                  }
-                  .txt-p {
-                    p {
-                      padding-left: 20px;
-                      padding-right: 20px;
-                      text-align: left;
-                      font-size: 13px;
-                    }
-                  }
-                }
-              }
-            }
-            #generic-section-0 {
-                background-size: contain;
-                background-repeat: no-repeat;
-                .inner-con {
-                    .match-iphone {
-                        height: 233px;
-                        overflow: hidden;
-                        margin-bottom: 30px;
-                        
-                        img {
-                            max-width: 136%;
-                            margin-top: -30px;
-                            margin-left: -7px;
-                        }
-                    }
-                    .mains {
-                      height: 617px;
-                      .icons {
-                        height: 233px;
-                        overflow: hidden;
-                        margin-bottom: 8px;
-                        img {
-                          width: 136%;
-                          margin-top: -30px;
-                          margin-left: -7px;
-                        }
-                      }
-                      .detail {
-                        line-height: 20px;
-                        padding-top: 10px;
-                      }
-                    }  
-                }
-            }
-            #generic-section-1 {
-              height: 617px;
-              .inner-con {
-                .mains {
-                  height: 380px;
-                  .titles {
-                    padding-top: 11px;
-                  }
-                  .txt-p {
-                    margin-top: 12px;
-                    p {
-                      line-height: 19px;
-                    }
-                  }
-                }
-                .match-apple-imac {
-                  height: 222px;
-                  img {
-                    margin-left: -10px;
-                  }
-                }
-              }
-            }
-            #generic-section-1:before,
-            #generic-section-3:before,
-            #generic-section-5:before {
-              background-image: none;
-            }
-            #generic-section-3,
-            #generic-section-5 {
-              height: 617px;
-            }
-            #generic-section-3,
-            #generic-section-5 {
-              .inner-con {
-                background-color: #f6f6f6;
-                .mains {
-                  margin-bottom: 104px;
-                  .titles {
-                    letter-spacing: 0.18px;
-                  }
-                }
-                .match-apple-imac {
-                  height: 200px;
-                  img {
-                    max-height: 110%;
-                    margin-left: -32px;
-                  }
-                }
-              }
-            }
-            #generic-section-5 {
-              .inner-con {
-                .mains {
-                  margin-top: 0px;
-                }
-              } 
-            }
-          }
-        }
-      }
-    }
-  }
     
   /* Cover Flow */
   .ui-coverflow-wrapper {
@@ -6932,6 +6673,18 @@
         .brand-section {
             margin-left: 15px;
             margin-right: 15px;
+        }
+    }
+    
+    // Section 2x2
+    .generic-section-2x2 {
+        .mains {
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
         }
     }
 }
