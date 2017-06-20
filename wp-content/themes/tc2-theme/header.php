@@ -129,6 +129,10 @@
     wp_reset_postdata();
     
     $class[] = 'page-body-'.$post->post_name;
+    
+    if ( isset($_GET['s']) && $_GET['s']!='' ) {
+        $class[] = 'search search-results';
+    }
 ?>
 <body <?php body_class($class); ?>>
     

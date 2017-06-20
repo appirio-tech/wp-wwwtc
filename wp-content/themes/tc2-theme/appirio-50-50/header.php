@@ -17,12 +17,18 @@
 	<?php bloginfo('name'); // show the blog name, from settings ?> | 
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // if we're on the home page, show the description, from the site's settings - otherwise, show the title of the post or page ?>
 </title>
-  
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MXXQHG8');</script>
+    <!-- End Google Tag Manager -->
 <?php // We are loading our theme directory style.css by queuing scripts in our functions.php file, 
 	// so if you want to load other stylesheets,
 	// I would load them with an @import call in your style.css
 ?>
-
+    
 	<?php /*<link href="<?php echo get_template_directory_uri(); ?>/appirio-50-50/css/fonts.css" rel="stylesheet" type="text/css">*/ ?>
     <link href="<?php echo get_template_directory_uri(); ?>/appirio-50-50/css/screen.css" rel="stylesheet" type="text/css">
     <script src="//wwwtc.wpengine.com/wp-content/themes/tc2-theme/appirio-50-50/js/jquery-2.1.4.js"></script>
@@ -54,13 +60,15 @@
   ga('send', 'pageview');
 
 </script>
- 
 <link rel="shortcut icon" href="https://s3.amazonaws.com/app.topcoder.com/favicon.ico">
-
 </head>
 
 <body class="gallery">
-	
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MXXQHG8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) --> 
+    
 	<header>
     	<div class="clearfix">
 			<a href="javascript:;" class="logo"></a>

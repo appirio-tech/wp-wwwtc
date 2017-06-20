@@ -36,7 +36,6 @@ function case_lazy_load(){
                 $query->the_post(); 
                 $terms = get_the_terms( $query->post->ID , 'case_study_category' );
         ?>
-            <pre><?php print_r($post); ?></pre>
             <li class="<?php echo $terms[0]->slug; ?> visible">
                 <a href="https://www.topcoder.com/about-topcoder/customer-stories/<?php echo $query->post->post_name; ?>/">
                     <span class="case-img">

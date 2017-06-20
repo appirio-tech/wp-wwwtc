@@ -1,6 +1,6 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-clients clients-module">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-clients clients-module <?php echo $generic_section_val['custom_class']; ?>">
     <section class="section section-clients">
-        <div class="container">
+        <div class="container-fluid">
             <div class="valign-middle">
                 <?php if ( $generic_section_val['title']!='' ) : ?>
                 <h2 class="titles"><?php echo $generic_section_val['title']; ?></h2>

@@ -11,7 +11,7 @@
         $contact_form_class .= ' no-bg';
     }
 ?>
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="item <?php echo $contact_form_class; ?>">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="item <?php echo $contact_form_class; ?> <?php echo $generic_section_val['custom_class']; ?>">
    
     <section class="section-contact">
         <div class="container">

@@ -87,17 +87,17 @@ jQuery(document).ready(function($){
   })
   
   //click on row to expand the content detail of Product List in What Can you Do page
-  $(".tab-contents .products-module .row .briefly, .generic-products .row .briefly").click(function(){
-    $(this).addClass("hide");
-    $(this).next().removeClass("hide");
+  $(".tab-contents .products-module .row .briefly-columns, .generic-products .row .briefly-columns").click(function(){
+    var $this = $(this),
+        $parent = $this.parents('.briefly');
+    
+    if ( !$parent.hasClass('details-shown') ) {
+        $parent.addClass('details-shown');
+    } else {
+        $parent.removeClass('details-shown');
+    }
+    
   })
-  
-  //do nothing on expandable rows when click on View Detail button
-  /*
-  $(".tab-contents .products-module .row .briefly .btn-view-details, .generic-products .row .briefly .btn-view-details").click(function(event){
-    event.stopPropagation();
-  })
-  */
   
   //click on X to collapse the content detail of Product List in What Can you Do page
   $(".tab-contents .products-module .row .detailed .btn-icon-close, .generic-products .row .detailed .btn-icon-close").click(function(){
@@ -749,6 +749,18 @@ jQuery(document).ready(function($){
                                 $('#case-page').remove();
                             }
                             
+                            // Apply filter
+                            var catfilter = $('.categories li.active a').data('catfilter');
+                            
+                            $('.case-studies-post li').removeClass('visible');
+                            if ( catfilter=='all' ) {
+                                $('.case-studies-post li').fadeIn().addClass('visible');
+                                $('.case-studies-post li.ad').hide();
+                            } else {
+                                $('.case-studies-post li').hide();
+                                $('.case-studies-post li.'+catfilter).fadeIn().addClass('visible');
+                            }
+                            
                             $grid.masonry('reloadItems');
                             $grid.imagesLoaded().progress( function() {
                                 $grid.masonry('layout');
@@ -777,7 +789,7 @@ jQuery(document).ready(function($){
                 $('.case-studies-post li.'+$this.data('catfilter')).fadeIn().addClass('visible');
             }
             
-             var $ad = $('.case-studies-post ul li.ad').detach();
+            var $ad = $('.case-studies-post ul li.ad').detach();
             
             if ( $('.case-studies-post ul li:visible').length>0 ) {
                 var eq_insert = $('.case-studies-post ul li:visible').length>1 ? 1 : 0;

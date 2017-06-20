@@ -14,7 +14,7 @@
                 <?php echo apply_filters('the_content', $arrOptions['description']); ?>
             </div>
             <div class="modal-footer">
-                <a href="<?php echo $arrOptions['button_url']; ?>" class="btn-blue"><?php echo $arrOptions['button_label']; ?></a>
+                <a href="<?php echo $arrOptions['button_url']; ?>" target="_blank" class="btn-blue"><?php echo $arrOptions['button_label']; ?></a>
             </div>
         </div>
     </div>

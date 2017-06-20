@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="item generic-left-text-right-image web-info-area info-area <?php if($generic_section_key===0){ echo 'active';} ?>">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="item generic-left-text-right-image web-info-area info-area <?php if($generic_section_key===0){ echo 'active';} ?> <?php echo $generic_section_val['custom_class']; ?>">
     <div class="inner-con  <?php echo (!$generic_section_val['side_image']? 'no-side-img' : '') ?>">
     
         <div class="mains">

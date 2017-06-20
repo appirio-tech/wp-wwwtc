@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-2x2">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-2x2 <?php echo $generic_section_val['custom_class']; ?>">
     <div class="mains">
        
         <?php if ( $generic_section_val['title']!='' ) : ?>

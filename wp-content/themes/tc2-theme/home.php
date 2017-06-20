@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+    if ( isset($_GET['s']) && $_GET['s']!='' ) :
+        include(locate_template('search.php'));
+    else :
+        get_header(); 
+?>
     
     <?php get_template_part('parts/right-aside'); ?>
     
@@ -58,3 +63,4 @@
 <?php get_template_part('parts/subscribe-modal'); ?>
 <?php get_template_part('parts/modal-exit-intent'); ?>
 <?php get_footer(); ?>
+<?php endif; ?>

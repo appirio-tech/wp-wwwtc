@@ -1528,6 +1528,9 @@ The `sprites` mixin generates identical output to the CSS template
     margin-bottom: 70px;
     padding-bottom: 70px;
   }
+  .case-study-content .case-studies-metrics, .single-case_studies .case-studies-metrics {
+    padding-left: 0;
+  }
   .case-study-content .case-studies-metrics li, .single-case_studies .case-studies-metrics li {
     display: inline-block;
     width: 30%;
@@ -1556,6 +1559,31 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .case-study-content .case-studies-post ul .grid-sizer, .single-case_studies .case-studies-post ul .grid-sizer {
     width: calc(50% - 20px);
+  }
+  .topcoder-community-members {
+    background-position: -130px center !important;
+    background-repeat: no-repeat !important;
+  }
+  .cognitive-on-demand .inner-con .match-iphone {
+    width: 50%;
+    padding: 0;
+  }
+  .cognitive-on-demand .inner-con .match-iphone img {
+    margin: 0 0 0 -50%;
+  }
+  .cognitive-on-demand .inner-con .mains {
+    padding: 50px 60px;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p ul li {
+    flex: 0 1 30%;
+    margin-bottom: 2%;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p ul li:nth-child(3) {
+    margin-right: 0;
   }
 }
 

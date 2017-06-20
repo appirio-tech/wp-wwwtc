@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-products products-module">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-products products-module <?php echo $generic_section_val['custom_class']; ?>">
     
     <?php if ( $generic_section_val['title']!='' && $generic_section_val['short_description']!='' ) : ?>
     <div class="head-panel">

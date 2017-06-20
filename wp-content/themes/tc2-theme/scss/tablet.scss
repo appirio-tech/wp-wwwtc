@@ -2193,6 +2193,7 @@
         }
         
         .case-studies-metrics {
+            padding-left: 0;
             li {
                 display: inline-block;
                 width: 30%;
@@ -2231,6 +2232,48 @@
                 
                 .grid-sizer {
                     width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+    
+    .topcoder-community-members {
+        background-position: -130px center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    .cognitive-on-demand {
+        .inner-con {
+            .match-iphone {
+                width: 50%;
+                padding: 0;
+                img {
+                    margin: 0 0 0 -50%;
+                }
+            }
+            .mains {
+                padding: 50px 60px;
+            }
+        }
+    }
+    
+    .cognitive-use-case {
+        .main-boxs {
+            .main-lefts {
+                .txt-p {
+                    ul {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        
+                        li {
+                            flex: 0 1 30%;
+                            margin-bottom: 2%;
+                            
+                            &:nth-child(3) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
                 }
             }
         }

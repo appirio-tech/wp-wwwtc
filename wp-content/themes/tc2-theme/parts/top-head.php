@@ -1,5 +1,5 @@
 <?php
-    $isBlog = ( is_single() || is_home() || is_archive() || is_search() );
+    $isBlog = is_home() || is_singular('post');
 ?>
 <header class="header">
     <div class="bs-container">

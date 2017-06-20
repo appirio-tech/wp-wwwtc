@@ -1,5 +1,5 @@
 <div class="blog-search">
-    <form role="search" method="get" id="searchform" action="/" >
+    <form role="search" method="get" id="searchform" action="/blog/" >
         <input type="search" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="Blog Search" />
     </form>
 </div>

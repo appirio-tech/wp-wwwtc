@@ -1075,27 +1075,31 @@ The `sprites` mixin generates identical output to the CSS template
   .section-quotes .carousel {
     height: 100%;
   }
+  .section-quotes .carousel .valign-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   .section-quotes .carousel .info-main {
     text-align: center;
-    padding: 0 35px 0 40px;
+    padding: 0;
   }
   .section-quotes .carousel .info-main .txt {
     font-size: 20px !important;
-    font-weight: 600;
+    font-weight: 300;
     color: #fff;
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
     padding-bottom: 26px;
     max-width: 1280px;
     margin-right: auto;
     margin-left: auto;
   }
   .section-quotes .carousel .info-main .txt-name {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 13px !important;
+    font-weight: 300;
     color: #fff;
     font-weight: normal;
-    line-height: 1.4;
-    padding-bottom: 20px;
+    line-height: 1.54;
   }
   .section-quotes .carousel .info-main .btn-meet-our-community {
     width: 240px;
@@ -1109,16 +1113,16 @@ The `sprites` mixin generates identical output to the CSS template
     z-index: 89;
   }
   .section-quotes .head-box .carousel-indicators {
-    top: -46.5px;
+    top: -23px;
     left: 0;
     width: 100%;
     margin-left: 0;
-    height: 68px;
+    height: 48px;
     overflow: hidden;
   }
   .section-quotes .head-box .carousel-indicators li {
-    width: 68px;
-    height: 68px;
+    width: 45px;
+    height: 45px;
     margin: 0 11px;
     text-indent: 0;
     position: relative;
@@ -1130,13 +1134,11 @@ The `sprites` mixin generates identical output to the CSS template
     opacity: 0.58;
   }
   .section-quotes .head-box .carousel-indicators li.active {
-    width: 68px;
-    height: 68px;
     background: none;
   }
   .section-quotes .head-box .carousel-indicators li img {
-    width: 68px;
-    height: 68px;
+    height: auto;
+    width: 100%;
     border-radius: 100%;
   }
   .section-quotes .carousel-inner {
@@ -1182,17 +1184,17 @@ The `sprites` mixin generates identical output to the CSS template
     background-size: cover;
   }
   .section-contact .titles {
-    font-size: 20px;
+    font-size: 25px;
     color: #fff;
-    line-height: 1.2;
+    line-height: 1.44;
     font-weight: 300;
-    width: auto;
+    width: 85%;
     margin-right: auto;
     margin-left: auto;
     padding: 0 0 20px 0;
   }
   .section-contact .form-contact {
-    width: 448px;
+    width: 100%;
     margin: 0 auto;
   }
   .section-contact .form-contact .inputs,
@@ -2015,25 +2017,32 @@ The `sprites` mixin generates identical output to the CSS template
   .contact-module .section-contact {
     background-attachment: inherit;
     padding: 0;
-    min-height: 50px;
-    height: 184px;
+    min-height: 241px;
+    height: auto !important;
+  }
+  .contact-module .section-contact .container {
+    height: auto !important;
+    min-height: 241px;
   }
   .contact-module .section-contact .valign-middle {
-    min-height: 50px;
-    height: 184px;
+    height: auto;
+    top: auto !important;
+    transform: none !important;
+    min-height: 0 !important;
+    padding: 20px 0;
   }
   .contact-module .section-contact .titles {
     text-align: center;
     padding: 10px 30px 10px 30px;
+    width: 85% !important;
   }
   .contact-module .section-contact .sub-titles {
     font-family: "proxima-nova", sans-serif;
-    font-size: 40px;
+    font-size: 20px;
     color: #fff;
     text-align: center;
-    line-height: 50px;
-    width: 800px;
-    margin: -70px auto 54px auto;
+    line-height: 1.5;
+    margin: 0 auto 54px auto;
   }
   .contact-module .section-contact .form-contact {
     width: 916px;
@@ -2109,19 +2118,26 @@ The `sprites` mixin generates identical output to the CSS template
     display: block;
   }
   .contact-module.contact-black-module .section-contact {
-    background: url(../i/section-contact-bg.jpg) no-repeat;
-    background-attachment: inherit;
-    background-position: center center;
-    background-size: cover;
-    padding-bottom: 120px;
+    height: 241px;
+    padding: 0;
+  }
+  .contact-module.contact-black-module .section-contact .container {
+    height: 241px;
+    position: relative;
+  }
+  .contact-module.contact-black-module .section-contact .container .valign-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .contact-module.contact-black-module .section-contact .form-contact {
     margin: 0 auto;
     width: auto;
   }
   .contact-module.contact-black-module .section-contact .titles {
-    padding: 10px 0 10px;
-    width: 850px;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -4793,10 +4809,20 @@ The `sprites` mixin generates identical output to the CSS template
     padding: 20px 20px;
   }
   .generic .generic-section-plain .mains {
-    margin-top: 30px;
+    margin-top: 12px;
+    width: 100%;
+  }
+  .generic .generic-section-plain .mains .top-boxs .titles {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
   }
   .generic .generic-section-plain .mains .main-boxs .main-lefts .txt-p {
-    font-size: 15px;
+    font-size: 20px;
+  }
+  .generic .generic-section-plain .mains .main-boxs .main-lefts .txt-p p {
+    font-size: 20px;
+    line-height: 1.5;
   }
   .generic .generic-left-image-right-text {
     clear: both;
@@ -4842,15 +4868,9 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .generic .generic-left-image-right-text .mains .titles {
     font-size: 20px;
-    font-weight: 600;
-    min-height: 70px;
-    padding-top: 18px;
+    font-weight: 300;
     text-align: left;
-    margin-left: 72px;
-    line-height: 1.2;
-  }
-  .generic .generic-left-image-right-text .mains .titles.no-icon {
-    margin-left: 0;
+    line-height: 1.5;
   }
   .generic .generic-left-image-right-text .mains .detail {
     font-size: 16px;
@@ -4859,12 +4879,24 @@ The `sprites` mixin generates identical output to the CSS template
     font-weight: bold;
   }
   .generic .generic-left-image-right-text .mains .txt-p {
-    padding-right: 0;
+    margin: 5px 0 0;
+    padding: 0;
+    text-align: left;
   }
   .generic .generic-left-image-right-text .mains .txt-p p {
     font-size: 16px;
-    line-height: 1.4;
-    margin: 25px 0;
+    line-height: 1.56;
+    margin-bottom: 25px;
+  }
+  .generic .generic-left-image-right-text .mains .txt-p p:last-of-type {
+    margin-bottom: 0;
+  }
+  .generic .generic-left-image-right-text .mains .btn-blue {
+    font-size: 14px;
+    height: 37px;
+    line-height: 37px;
+    min-width: 0;
+    padding: 0 20px;
   }
   .generic .generic-left-text-right-image {
     clear: both;
@@ -4889,13 +4921,12 @@ The `sprites` mixin generates identical output to the CSS template
     background: none;
     bottom: 0;
     height: auto;
-    padding: 10px 0;
+    padding: 20px 0 !important;
     position: relative;
     text-align: center;
     top: 0;
     vertical-align: middle;
     width: 100%;
-    padding: 10px 0 10px;
   }
   .generic .generic-left-text-right-image .match-apple-imac img {
     max-width: 90%;
@@ -4950,7 +4981,7 @@ The `sprites` mixin generates identical output to the CSS template
     text-align: left;
   }
   .generic .carousel-inner .item {
-    height: 508px;
+    height: 400px;
   }
   .generic .generic-left-image-right-text .inner-con {
     display: flex;
@@ -4959,7 +4990,9 @@ The `sprites` mixin generates identical output to the CSS template
     align-items: center;
   }
   .generic .generic-left-image-right-text .inner-con .mains {
+    height: auto;
     order: 0;
+    padding-bottom: 33px;
   }
   .generic .generic-left-image-right-text .inner-con .match-apple-imac {
     order: 0;
@@ -4978,7 +5011,6 @@ The `sprites` mixin generates identical output to the CSS template
     flex-wrap: wrap;
     height: calc(100% - 48px);
     align-items: center;
-    flex-direction: column-reverse;
   }
   .generic .generic-left-text-right-image .inner-con.no-side-img {
     flex-direction: row;
@@ -4987,7 +5019,17 @@ The `sprites` mixin generates identical output to the CSS template
     order: 0;
   }
   .generic .generic-left-text-right-image .inner-con .match-apple-imac {
-    order: 0;
+    order: 1;
+    padding: 0;
+  }
+  .generic .generic-left-text-right-image .inner-con .mains {
+    order: 2;
+    padding-bottom: 40px;
+  }
+  .generic .generic-left-text-right-image .inner-con .mains .titles {
+    margin: 0 0 5px;
+    min-height: 0;
+    padding: 0;
   }
   .generic .carousel-inner .generic-left-text-right-image .inner-con.no-side-img .mains {
     position: relative;
@@ -4995,7 +5037,7 @@ The `sprites` mixin generates identical output to the CSS template
     transform: translateY(-50%);
   }
   .generic .generic-contact-form.contact-white-module .section-contact {
-    padding: 50px 0;
+    padding: 60px 0 0;
   }
   .generic .generic-contact-form.contact-white-module .sub-titles {
     color: #666;
@@ -5023,10 +5065,10 @@ The `sprites` mixin generates identical output to the CSS template
   .generic .generic-left-image-right-text.mobile-info-area,
   .generic .generic-left-text-right-image.mobile-info-area,
   .generic .generic-plain.mobile-info-area {
-    background-position: 50% 0;
-    background-size: contain;
+    background-position: 0 0;
+    background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 220px;
+    padding-top: 0;
   }
   .generic .generic-contact-form.mobile-info-area.no-bg,
   .generic .generic-left-image-right-text.mobile-info-area.no-bg,
@@ -5432,9 +5474,6 @@ The `sprites` mixin generates identical output to the CSS template
     margin-top: 20px;
     padding: 0;
   }
-  .marketplace-the-products-page .contents .tab-contents-the-products .contact-module .container .valign-middle center {
-    margin-top: -60px;
-  }
   .marketplace-the-products-page .contents .tab-contents-the-products .contact-module .container .valign-middle center a {
     margin-top: 0;
     width: 150px;
@@ -5664,13 +5703,13 @@ The `sprites` mixin generates identical output to the CSS template
     padding-top: 68px;
   }
   .page-id-31 .wrapper.generic .contents .wrap .inner .generic-testimonials .section-quotes .carousel .carousel-inner .container .valign-middle .info-main .txt {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 25px;
-    letter-spacing: 0.2px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 26px;
   }
   .page-id-31 .wrapper.generic .contents .wrap .inner .generic-testimonials .section-quotes .carousel .carousel-inner .container .valign-middle .info-main .txt-name {
-    line-height: 24px;
+    line-height: 1.54;
     font-size: 13px;
   }
   .page-id-31 .wrapper.generic .contents .wrap .inner .generic-testimonials .section-quotes .carousel .head-box .carousel-indicators {
@@ -5999,20 +6038,43 @@ The `sprites` mixin generates identical output to the CSS template
   .error404 .sidebar .widget-subtitle {
     font-size: 18px;
   }
+  .hero-carousel .carousel-inner .item {
+    height: 400px;
+  }
   .hero-carousel .carousel-inner .item .carousel-caption h1 {
-    font-size: 29px;
-    margin-top: 100px;
+    font-size: 35px;
+    font-weight: 300px;
+    margin: 0;
   }
   .hero-carousel .carousel-inner .item .carousel-caption p {
-    font-size: 16px;
+    font-size: 18px;
+    margin: 18px auto 26px;
     padding: 0;
+    width: auto;
   }
   .hero-carousel .carousel-inner .item .carousel-caption .buttons .btn-white {
-    margin: 10px 0;
+    background-color: #0a71e6;
+    color: #fff;
+    font-size: 14px;
+    height: 37px;
+    line-height: 37px;
+    margin: 0;
+    min-width: 0;
+    padding: 0 20px;
     white-space: nowrap;
   }
   .hero-carousel .carousel-inner .item .carousel-caption .buttons .btn-video {
-    margin: 10px 0;
+    font-size: 14px;
+    margin: 0;
+  }
+  .hero-carousel .carousel-inner .item .carousel-caption .buttons .btn-video .icon-video {
+    height: 45px;
+    left: 15px;
+    top: 3px;
+    width: 45px;
+  }
+  .hero-carousel .carousel-inner .item .carousel-caption .buttons .btn-video .icon-video .icons {
+    margin-top: 8px;
   }
   .hero-carousel .carousel-inner .item .carousel-caption.hero-two-column {
     left: 15%;
@@ -6044,11 +6106,11 @@ The `sprites` mixin generates identical output to the CSS template
     width: 15%;
   }
   .admin-bar .hero-carousel .carousel-inner .item {
-    height: 100vh;
+    height: 400px;
   }
   .has-middle-page-navigation .hero-carousel .carousel-inner .item,
   .admin-bar.has-middle-page-navigation .hero-carousel .carousel-inner .item {
-    height: calc(100vh - 45px);
+    height: 355px;
   }
   .blog .contents, .single .contents, .archive .contents, .search .contents, .error404 .contents {
     width: 90%;
@@ -6121,7 +6183,7 @@ The `sprites` mixin generates identical output to the CSS template
     font-size: 24px;
   }
   .landing-page .section-quotes .head-box .carousel-indicators {
-    top: -25px;
+    top: -24px;
   }
   .landing-page .section-quotes .head-box .carousel-indicators li {
     height: 48px;
@@ -6137,7 +6199,7 @@ The `sprites` mixin generates identical output to the CSS template
     width: 48px;
   }
   .case-study-content .hero-carousel .carousel-inner .item, .single-case_studies .hero-carousel .carousel-inner .item {
-    height: 300px !important;
+    height: 400px !important;
   }
   .case-study-content .hero-carousel .carousel-inner .item .carousel-caption, .single-case_studies .hero-carousel .carousel-inner .item .carousel-caption {
     left: 7%;
@@ -6151,6 +6213,9 @@ The `sprites` mixin generates identical output to the CSS template
   .case-study-content .hero-carousel .carousel-inner .item .carousel-caption p, .single-case_studies .hero-carousel .carousel-inner .item .carousel-caption p {
     font-size: 18px;
     line-height: 40px;
+  }
+  .case-study-content .case-studies-metrics, .single-case_studies .case-studies-metrics {
+    padding-left: 0;
   }
   .case-study-content .contents, .single-case_studies .contents {
     margin-top: 0;
@@ -6268,6 +6333,118 @@ The `sprites` mixin generates identical output to the CSS template
   }
   .generic-section-2x2 .mains:after {
     display: none;
+  }
+  .generic .generic-section-columns {
+    padding: 36px 0 33px;
+  }
+  .generic .generic-section-columns .titles {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .generic .generic-section-columns .description {
+    margin-top: 5px;
+  }
+  .generic .generic-section-columns .description p {
+    font-size: 16px;
+    line-height: 1.56;
+  }
+  .generic .generic-section-2x2 .mains {
+    margin: 0;
+    width: 100%;
+  }
+  .generic .generic-section-2x2 .mains .container-2x2 {
+    border-bottom: 2px solid #d8d8d8;
+    margin: 0 20px;
+    min-height: 0;
+    padding: 40px 0 20px;
+  }
+  .generic .generic-section-2x2 .mains .container-2x2 .box-title {
+    font-size: 20px;
+  }
+  .generic .generic-section-2x2 .mains .container-2x2 .box-description {
+    font-size: 16px;
+  }
+  .generic .generic-section-2x2 .mains .top-left,
+  .generic .generic-section-2x2 .mains .top-right,
+  .generic .generic-section-2x2 .mains .bottom-left,
+  .generic .generic-section-2x2 .mains .bottom-right {
+    padding: 0 15px;
+  }
+  .generic .generic-section-2x2 .mains .top-left .icon,
+  .generic .generic-section-2x2 .mains .top-right .icon,
+  .generic .generic-section-2x2 .mains .bottom-left .icon,
+  .generic .generic-section-2x2 .mains .bottom-right .icon {
+    margin-bottom: 23px;
+  }
+  .generic .generic-section-2x2 .mains .top-left .icon img,
+  .generic .generic-section-2x2 .mains .top-right .icon img,
+  .generic .generic-section-2x2 .mains .bottom-left .icon img,
+  .generic .generic-section-2x2 .mains .bottom-right .icon img {
+    height: auto;
+    width: 58px;
+  }
+  .collaborate-with-team {
+    background-size: 160% !important;
+  }
+  .collaborate-with-team .mains {
+    margin-top: 268px !important;
+    width: 90% !important;
+  }
+  .topcoder-community-members {
+    background-color: #0a71e6;
+    height: auto !important;
+    background-size: 247% !important;
+    padding-top: 245px !important;
+  }
+  .topcoder-community-members .match-iphone {
+    display: none !important;
+  }
+  .topcoder-community-members .mains {
+    padding: 0 0 33px !important;
+  }
+  .topcoder-community-members .mains .txt-p {
+    font-size: 16px !important;
+  }
+  .where-tech-meets-talent {
+    background-size: 130% !important;
+    padding-top: 300px !important;
+  }
+  .blog-search {
+    height: 125px;
+    padding-top: 50px;
+  }
+  .blog-nav {
+    margin-top: 150px;
+  }
+  .blog-nav ul li a {
+    font-size: 11px;
+    height: 28px;
+    letter-spacing: normal;
+    line-height: 28px;
+    padding: 0 10px;
+  }
+  .header .search-icon {
+    display: none;
+  }
+  .cognitive-on-demand .inner-con {
+    margin-top: 50px;
+  }
+  .cognitive-on-demand .inner-con .match-iphone {
+    padding: 0;
+  }
+  .cognitive-on-demand .inner-con .mains {
+    padding: 30px;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p p {
+    font-size: 16px !important;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cognitive-use-case .main-boxs .main-lefts .txt-p ul li {
+    flex: 0 1 100%;
+    margin: 1% 0;
   }
 }
 

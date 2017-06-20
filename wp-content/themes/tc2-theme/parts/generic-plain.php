@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-plain text-<?php echo $generic_section_val['content_alignment']; ?>">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-plain text-<?php echo $generic_section_val['content_alignment']; ?> <?php echo $generic_section_val['custom_class']; ?>">
     
     <?php
         $section_style = '';

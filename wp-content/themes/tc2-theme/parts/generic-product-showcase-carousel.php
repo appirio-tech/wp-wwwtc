@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-product-showcase-carousel carousel-module">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-product-showcase-carousel carousel-module <?php echo $generic_section_val['custom_class']; ?>">
     <div class="head-box">
 
         <?php if ( $generic_section_val['title']!='' ) : ?>

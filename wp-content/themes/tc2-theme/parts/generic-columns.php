@@ -1,4 +1,4 @@
-<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-columns">
+<div id="generic-section-<?php echo $generic_section_key; ?>" class="generic-section-columns <?php echo $generic_section_val['custom_class']; ?>">
     
     <div class="container-fluid">
        
@@ -13,7 +13,7 @@
                     foreach( $generic_section_val['columns'] as $k=>$column ) :
                         $col_count += $column['column_grid_width'];
             ?>
-            <div class="col-md-<?php echo $column['column_grid_width']; ?>">
+            <div class="col col-md-<?php echo $column['column_grid_width']; ?> <?php echo $column['column_offset']!='' ? 'col-md-offset-'.$column['column_offset'] : ''; ?>">
                 
                 <?php if ( $column['top_image']!='' ) : ?>
                 <div class="text-center">
